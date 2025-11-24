@@ -18,17 +18,13 @@
 
   <style>
     :root {
-      --bg: #fcfcff;
-      --bg-card: #ffffff;
-      --bg-chip: #f3f4ff;
+      --bg: #fafafa;
       --text-main: #111827;
       --text-muted: #6b7280;
-      --accent: #6366f1;  /* indigo */
-      --accent-soft: rgba(99, 102, 241, 0.08);
+      --accent: #6366f1;
+      --accent-soft: #e0e7ff;
       --border-subtle: #e5e7eb;
-      --radius-card: 18px;
-      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.16);
-      --max-width: 1040px;
+      --max-width: 960px;
     }
 
     * {
@@ -43,9 +39,9 @@
 
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at top left, #e0e7ff 0, #f9fafb 45%, #eef2ff 100%);
+      background: var(--bg);
       color: var(--text-main);
-      line-height: 1.6;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -61,67 +57,79 @@
     .page {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 20px 16px 40px;
+      padding: 22px 16px 40px;
+      background: #ffffff;
+      border-left: 1px solid var(--border-subtle);
+      border-right: 1px solid var(--border-subtle);
     }
 
     /* top bar */
 
-    .top-row {
+    .top-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
-    .top-left {
+    .brand {
       display: flex;
-      align-items: center;
+      align-items: baseline;
       gap: 10px;
     }
 
-    .logo-badge {
-      width: 34px;
-      height: 34px;
-      border-radius: 13px;
+    .brand-logo {
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
       background: linear-gradient(135deg, #6366f1, #ec4899);
       display: flex;
       align-items: center;
       justify-content: center;
       color: #f9fafb;
       font-weight: 700;
-      font-size: 0.9rem;
-      box-shadow: 0 10px 24px rgba(79, 70, 229, 0.5);
+      font-size: 0.8rem;
     }
 
-    .site-label {
-      font-size: 0.85rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    .top-nav {
+    .brand-text {
       display: flex;
-      gap: 12px;
-      font-size: 0.85rem;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 2px;
     }
 
-    .top-nav a {
+    .brand-name {
+      font-size: 0.95rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .brand-sub {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.86rem;
+    }
+
+    .nav a {
       color: #4b5563;
       padding-bottom: 2px;
       border-bottom: 1px solid transparent;
     }
 
-    .top-nav a:hover {
-      border-bottom-color: rgba(107, 114, 128, 0.9);
+    .nav a:hover {
+      border-bottom-color: #9ca3af;
       text-decoration: none;
     }
 
     @media (max-width: 720px) {
-      .top-row {
+      .top-bar {
         flex-direction: column;
         align-items: flex-start;
       }
@@ -130,80 +138,49 @@
     /* hero */
 
     .hero {
-      background: rgba(255, 255, 255, 0.96);
-      border-radius: 24px;
-      border: 1px solid rgba(209, 213, 219, 0.9);
-      padding: 22px 22px 18px;
-      box-shadow: var(--shadow-soft);
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
-      gap: 24px;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at -10% -10%, rgba(129, 140, 248, 0.18), transparent 55%),
-        radial-gradient(circle at 120% 0, rgba(244, 114, 182, 0.16), transparent 50%);
-      pointer-events: none;
-    }
-
-    @media (max-width: 880px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .hero-left,
-    .hero-right {
-      position: relative;
-      z-index: 1;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 18px;
+      margin-bottom: 18px;
     }
 
     .hero-chip-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .hero-chip {
-      font-size: 0.74rem;
-      padding: 4px 9px;
+      font-size: 0.75rem;
+      padding: 3px 8px;
       border-radius: 999px;
       background: var(--accent-soft);
       color: #4338ca;
-      border: 1px solid rgba(129, 140, 248, 0.6);
-      text-transform: uppercase;
       letter-spacing: 0.08em;
+      text-transform: uppercase;
       font-weight: 600;
     }
 
     .hero-subchip {
-      font-size: 0.74rem;
-      padding: 4px 9px;
+      font-size: 0.75rem;
+      padding: 3px 8px;
       border-radius: 999px;
-      background: #f3f4ff;
-      color: #4b5563;
-      border: 1px solid #e5e7eb;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      background: #f9fafb;
     }
 
     .hero-name {
-      font-size: clamp(2rem, 3.2vw, 2.4rem);
+      font-size: clamp(1.9rem, 3vw, 2.3rem);
       font-weight: 700;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
       margin-bottom: 4px;
     }
 
     .hero-tagline {
       font-size: 0.96rem;
       color: var(--text-muted);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .hero-tagline span {
@@ -214,7 +191,7 @@
     .hero-text {
       font-size: 0.94rem;
       color: #374151;
-      max-width: 35rem;
+      max-width: 40rem;
     }
 
     .hero-text strong {
@@ -222,22 +199,22 @@
     }
 
     .hero-actions {
-      margin-top: 14px;
+      margin-top: 12px;
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
     }
 
     .btn-main,
     .btn-ghost {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       border-radius: 999px;
-      padding: 7px 14px;
+      padding: 6px 12px;
+      border: 1px solid transparent;
+      cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      border: 1px solid transparent;
-      cursor: pointer;
       text-decoration: none;
     }
 
@@ -245,13 +222,12 @@
       background: #111827;
       color: #f9fafb;
       border-color: #111827;
-      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.55);
     }
 
     .btn-ghost {
       background: transparent;
       color: #111827;
-      border-color: rgba(148, 163, 184, 0.9);
+      border-color: var(--border-subtle);
     }
 
     .btn-main:hover,
@@ -260,82 +236,34 @@
       text-decoration: none;
     }
 
-    .hero-right {
+    /* layout below hero */
+
+    .layout {
       display: grid;
-      gap: 10px;
-    }
-
-    .hero-card {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 16px;
-      border: 1px solid rgba(209, 213, 219, 0.95);
-      padding: 12px 14px 10px;
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      backdrop-filter: blur(6px);
-    }
-
-    .hero-card h3 {
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-      color: #111827;
-    }
-
-    .hero-card p {
-      font-size: 0.86rem;
-    }
-
-    .hero-mini-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 6px;
-    }
-
-    .hero-mini-chip {
-      font-size: 0.74rem;
-      padding: 3px 7px;
-      border-radius: 999px;
-      background: #f3f4f6;
-      border: 1px solid #e5e7eb;
-      color: #374151;
-    }
-
-    .hero-contact {
-      margin-top: 6px;
-      font-size: 0.82rem;
-    }
-
-    /* main layout */
-
-    .content {
-      margin-top: 24px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
-      gap: 20px;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      gap: 24px;
       align-items: flex-start;
     }
 
-    @media (max-width: 960px) {
-      .content {
+    @media (max-width: 900px) {
+      .layout {
         grid-template-columns: 1fr;
       }
     }
 
-    .card {
-      background: var(--bg-card);
-      border-radius: var(--radius-card);
-      border: 1px solid var(--border-subtle);
-      padding: 16px 18px 14px;
-      box-shadow: var(--shadow-soft);
+    /* generic section styles */
+
+    section {
+      margin-bottom: 22px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-subtle);
     }
 
-    .card + .card {
-      margin-top: 14px;
+    section:last-of-type {
+      border-bottom: none;
     }
 
-    .card-header {
+    .section-header {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
@@ -343,34 +271,36 @@
       margin-bottom: 6px;
     }
 
-    .card-title {
+    h2 {
       font-size: 0.98rem;
       font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
 
-    .card-note {
-      font-size: 0.78rem;
+    .section-note {
+      font-size: 0.8rem;
       color: var(--text-muted);
       white-space: nowrap;
     }
 
     @media (max-width: 600px) {
-      .card-header {
+      .section-header {
         flex-direction: column;
         align-items: flex-start;
       }
-      .card-note {
+      .section-note {
         white-space: normal;
       }
     }
 
-    .card p {
+    p {
       font-size: 0.93rem;
       color: #374151;
       margin-bottom: 6px;
     }
 
-    .card p:last-child {
+    p:last-child {
       margin-bottom: 0;
     }
 
@@ -386,22 +316,6 @@
 
     strong {
       font-weight: 600;
-    }
-
-    /* research list */
-
-    .bullet-list {
-      margin-top: 2px;
-    }
-
-    /* publications */
-
-    .pub-title {
-      font-weight: 500;
-    }
-
-    .pub-venue {
-      font-style: italic;
     }
 
     /* teaching */
@@ -428,7 +342,25 @@
 
     .teach-tag {
       font-size: 0.72rem;
-      padding: 2px 6px;
+      padding: 1px 6px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: #f9fafb;
+      color: #4b5563;
+    }
+
+    /* chips on sidebar */
+
+    .chip-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 4px;
+    }
+
+    .chip {
+      font-size: 0.78rem;
+      padding: 3px 7px;
       border-radius: 999px;
       border: 1px solid var(--border-subtle);
       background: #f9fafb;
@@ -454,23 +386,7 @@
       margin-right: 4px;
     }
 
-    /* sidebar chips */
-
-    .chip-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 4px;
-    }
-
-    .chip {
-      font-size: 0.78rem;
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: var(--bg-chip);
-      border: 1px solid var(--border-subtle);
-      color: #374151;
-    }
+    /* simple lists */
 
     .simple-list {
       font-size: 0.9rem;
@@ -484,9 +400,7 @@
     /* contact */
 
     .contact-block p {
-      font-size: 0.9rem;
       margin-bottom: 4px;
-      color: #374151;
     }
 
     .small-note {
@@ -496,22 +410,25 @@
     }
 
     .footer {
-      margin-top: 14px;
+      margin-top: 16px;
       font-size: 0.78rem;
       color: #9ca3af;
-      text-align: center;
+      text-align: right;
     }
   </style>
 </head>
 <body>
   <div class="page">
     <!-- TOP BAR -->
-    <div class="top-row">
-      <div class="top-left">
-        <div class="logo-badge">FG</div>
-        <div class="site-label">dynamical systems &amp; other obsessions</div>
+    <div class="top-bar">
+      <div class="brand">
+        <div class="brand-logo">FG</div>
+        <div class="brand-text">
+          <div class="brand-name">FATIMA GHADIEH</div>
+          <div class="brand-sub">systems &amp; control · learning · dynamical systems</div>
+        </div>
       </div>
-      <nav class="top-nav">
+      <nav class="nav">
         <a href="#now">Now</a>
         <a href="#research">Research</a>
         <a href="#teaching">Teaching</a>
@@ -522,101 +439,67 @@
     </div>
 
     <!-- HERO -->
-    <section class="hero" id="now">
-      <div class="hero-left">
-        <div class="hero-chip-row">
-          <span class="hero-chip">Fatima Ghadieh</span>
-          <span class="hero-subchip">PhD · Systems &amp; Control · UofT</span>
-        </div>
-        <h1 class="hero-name">I think about how systems behave, and how we learn from them.</h1>
-        <p class="hero-tagline">
-          Right now: <span>indirect identification of stable LTI systems</span> using adaptive observers.
-        </p>
-        <p class="hero-text">
-          I’m a Direct-PhD student in Electrical &amp; Computer Engineering at the University of Toronto.
-          My work sits at the intersection of <strong>systems &amp; control</strong> and
-          <strong>learning</strong>, with a soft spot for algorithms that come with actual stability
-          guarantees (not just vibes).
-        </p>
-        <div class="hero-actions">
-          <a class="btn-main" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
-          <a class="btn-ghost" href="#updates">Jump to recent updates</a>
-        </div>
+    <div class="hero" id="now">
+      <div class="hero-chip-row">
+        <span class="hero-chip">Direct-PhD · UofT</span>
+        <span class="hero-subchip">Systems &amp; Control</span>
       </div>
-
-      <div class="hero-right">
-        <div class="hero-card">
-          <h3>What I’m doing now</h3>
-          <p>
-            PhD with <strong>Mireille&nbsp;E. Broucke</strong> in the Systems Control Group (UofT), working on
-            adaptive observer–based identification for stable linear systems.
-          </p>
-          <div class="hero-mini-row">
-            <span class="hero-mini-chip">system ID</span>
-            <span class="hero-mini-chip">adaptive observers</span>
-            <span class="hero-mini-chip">stability proofs</span>
-          </div>
-          <p class="hero-contact">
-            best email:
-            <a href="mailto:fatima.ghadieh@mail.utoronto.ca">fatima.ghadieh@mail.utoronto.ca</a>
-          </p>
-        </div>
-
-        <div class="hero-card">
-          <h3>Previously</h3>
-          <p>
-            B.E. in Electrical &amp; Computer Engineering at AUB (CGPA 4.0, Dean’s Honor List) · E3 research
-            intern at the Adaptive Systems Lab (EPFL) playing with multi-agent RL in POMDPs · data analyst for a
-            150+-student intro programming course.
-          </p>
-          <div class="hero-mini-row">
-            <span class="hero-mini-chip">EPFL ASL</span>
-            <span class="hero-mini-chip">AUB</span>
-            <span class="hero-mini-chip">RL in POMDPs</span>
-          </div>
-        </div>
+      <h1 class="hero-name">I think about how systems behave, and how we learn from them.</h1>
+      <p class="hero-tagline">
+        Right now: <span>indirect identification of stable LTI systems</span> using adaptive observers.
+      </p>
+      <p class="hero-text">
+        I’m a Direct-PhD student in Electrical &amp; Computer Engineering at the University of Toronto.
+        My work lives somewhere between <strong>systems &amp; control</strong> and
+        <strong>learning</strong>, with a soft spot for algorithms that come with actual stability
+        guarantees (not just vibes).
+      </p>
+      <div class="hero-actions">
+        <a class="btn-main" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
+        <a class="btn-ghost" href="#updates">Jump to recent updates</a>
       </div>
-    </section>
+    </div>
 
-    <!-- MAIN CONTENT -->
-    <div class="content">
+    <!-- MAIN LAYOUT -->
+    <div class="layout">
       <!-- MAIN COLUMN -->
       <div>
-        <section class="card" id="about">
-          <div class="card-header">
-            <h2 class="card-title">A bit more about me</h2>
-            <div class="card-note">short version, not a biography</div>
+        <section id="about">
+          <div class="section-header">
+            <h2>ABOUT</h2>
+            <div class="section-note">short version, not a biography</div>
           </div>
           <p>
-            I’m a Direct-PhD student in the Systems Control Group at the University of Toronto. I like problems
-            where you can’t just throw a neural net at the system and hope for the best – you actually have to
-            care about <strong>dynamics</strong>, <strong>structure</strong>, and
-            <strong>what happens as t → ∞</strong>.
+            I’m a Direct-PhD student in the Systems Control Group at the University of Toronto, advised by
+            <strong>Mireille&nbsp;E. Broucke</strong>. My current work focuses on indirect identification of
+            stable linear time-invariant systems via adaptive observer constructions, with an emphasis on
+            stability guarantees and robustness.
           </p>
           <p>
-            Before Toronto, I studied Electrical &amp; Computer Engineering at the
-            <strong>American University of Beirut</strong>, graduating with a 4.0 CGPA. I spent a summer at
-            the <strong>Adaptive Systems Laboratory (EPFL)</strong>, working on multi-agent reinforcement
-            learning under partial observability, and I’ve played with shared control and driver intention
-            recognition for autonomous driving.
+            Before Toronto, I completed a B.E. in Electrical &amp; Computer Engineering at the
+            <strong>American University of Beirut (AUB)</strong>, graduating with a 4.0 CGPA and Dean’s Honor
+            List recognition. I spent a summer as an E3 research intern at the
+            <strong>Adaptive Systems Laboratory (EPFL)</strong>, working on multi-agent reinforcement
+            learning in decentralized, partially observable settings, and I have worked on shared control and
+            human–machine interfaces for autonomous driving.
           </p>
         </section>
 
-        <section class="card" id="research">
-          <div class="card-header">
-            <h2 class="card-title">Nerdy things I’m into</h2>
-            <div class="card-note">a.k.a. research themes</div>
+        <section id="research">
+          <div class="section-header">
+            <h2>RESEARCH</h2>
+            <div class="section-note">things my brain loops on</div>
           </div>
-          <ul class="bullet-list">
+          <ul>
             <li>
               <strong>Adaptive observer–based identification.</strong>
               Designing indirect identification schemes for stable LTI systems that use adaptive observers,
-              with convergence and robustness guarantees that you can actually prove.
+              with convergence and robustness guarantees that actually hold up.
             </li>
             <li>
               <strong>Decentralized learning under partial observability.</strong>
               Policy evaluation and belief sharing in decentralized POMDPs, and how communication structure
-              changes what’s possible.
+              changes what is achievable.
             </li>
             <li>
               <strong>Shared control &amp; HMI for automated driving.</strong>
@@ -625,34 +508,34 @@
             </li>
             <li>
               <strong>Data-informed teaching.</strong>
-              Using course data to make large, mixed-format intro programming classes a bit less painful for
-              everyone.
+              Using course data to make large, mixed-format introductory programming classes less painful for
+              students and instructors.
             </li>
           </ul>
         </section>
 
-        <section class="card" id="teaching">
-          <div class="card-header">
-            <h2 class="card-title">Teaching &amp; helping out</h2>
-            <div class="card-note">where I pretend MATLAB bugs are fun</div>
+        <section id="teaching">
+          <div class="section-header">
+            <h2>TEACHING</h2>
+            <div class="section-note">courses I’ve TA’d or supported</div>
           </div>
 
           <div class="teach-item">
             <div class="teach-course">
-              ECE 411 – Adaptive Control and Reinforcement Learning (UofT)
+              ECE 411 – Adaptive Control and Reinforcement Learning (University of Toronto)
             </div>
             <div class="teach-meta">
               Teaching assistant. Tutorials and control-design exercises using MATLAB and simulation tools.
             </div>
             <div class="teach-tags">
               <span class="teach-tag">adaptive control</span>
-              <span class="teach-tag">RL basics</span>
+              <span class="teach-tag">reinforcement learning</span>
             </div>
           </div>
 
           <div class="teach-item">
             <div class="teach-course">
-              ECE 470 – Robot Modeling and Control (UofT)
+              ECE 470 – Robot Modeling and Control (University of Toronto)
             </div>
             <div class="teach-meta">
               Teaching assistant. Practical sessions on robot dynamics and feedback control.
@@ -669,7 +552,7 @@
             </div>
             <div class="teach-meta">
               Data analyst &amp; coordinator for a mixed-learning offering with 150+ students and 14 coding
-              coaches; lots of spreadsheets, lots of plotting, lots of learning about how students learn.
+              coaches; statistical analysis of performance and engagement.
             </div>
             <div class="teach-tags">
               <span class="teach-tag">Python</span>
@@ -678,10 +561,10 @@
           </div>
         </section>
 
-        <section class="card" id="updates">
-          <div class="card-header">
-            <h2 class="card-title">Tiny updates log</h2>
-            <div class="card-note">no full blog, just highlights</div>
+        <section id="updates">
+          <div class="section-header">
+            <h2>UPDATES</h2>
+            <div class="section-note">tiny changelog, no full blog</div>
           </div>
           <div class="updates-list">
             <div class="update-item">
@@ -709,16 +592,16 @@
             <div class="update-item">
               <span class="update-emoji">🎉</span>
               <span class="update-date">May 2023.</span>
-              Finished my B.E. at AUB and received the LebNet Early in Career Scholarship and the
+              Completed my B.E. at AUB and received the LebNet Early in Career Scholarship and the
               MEPI TLS Gender Scholarship.
             </div>
           </div>
         </section>
 
-        <section class="card" id="papers">
-          <div class="card-header">
-            <h2 class="card-title">Papers (short list)</h2>
-            <div class="card-note">for the full list, use Google Scholar</div>
+        <section id="papers">
+          <div class="section-header">
+            <h2>PAPERS</h2>
+            <div class="section-note">short list · full list on Scholar</div>
           </div>
           <ul>
             <li>
@@ -737,10 +620,10 @@
 
       <!-- SIDE COLUMN -->
       <div>
-        <section class="card">
-          <div class="card-header">
-            <h2 class="card-title">Keywords / buzzwords</h2>
-            <div class="card-note">in case you’re skimming</div>
+        <section id="keywords">
+          <div class="section-header">
+            <h2>KEYWORDS</h2>
+            <div class="section-note">if you’re skimming</div>
           </div>
           <div class="chip-grid">
             <span class="chip">stable LTI systems</span>
@@ -754,9 +637,10 @@
           </div>
         </section>
 
-        <section class="card">
-          <div class="card-header">
-            <h2 class="card-title">Awards &amp; scholarships</h2>
+        <section id="awards">
+          <div class="section-header">
+            <h2>AWARDS</h2>
+            <div class="section-note">a few highlights</div>
           </div>
           <ul class="simple-list">
             <li><strong>LebNet Early in Career Scholarship</strong>, 2023.</li>
@@ -768,10 +652,10 @@
           </ul>
         </section>
 
-        <section class="card">
-          <div class="card-header">
-            <h2 class="card-title">Stuff outside proofs</h2>
-            <div class="card-note">service &amp; community</div>
+        <section id="service">
+          <div class="section-header">
+            <h2>SERVICE</h2>
+            <div class="section-note">things outside the theorem loop</div>
           </div>
           <ul class="simple-list">
             <li><strong>Mentor</strong>, LebNet Mentorship Program (2023–2025).</li>
@@ -781,10 +665,10 @@
           </ul>
         </section>
 
-        <section class="card" id="contact">
-          <div class="card-header">
-            <h2 class="card-title">If you’re a human reading this</h2>
-            <div class="card-note">how to reach me</div>
+        <section id="contact">
+          <div class="section-header">
+            <h2>CONTACT</h2>
+            <div class="section-note">if you’re a human reading this</div>
           </div>
           <div class="contact-block">
             <p>
@@ -794,20 +678,17 @@
               <a href="mailto:fatimaghadieh2@gmail.com">fatimaghadieh2@gmail.com</a>
             </p>
             <p>
+              GitHub:
+              <a href="https://github.com/fjg00" target="_blank" rel="noopener">github.com/fjg00</a><br />
               LinkedIn:
               <a href="https://www.linkedin.com/in/fatima-ghadieh" target="_blank" rel="noopener">
                 /in/fatima-ghadieh
-              </a><br />
-              GitHub:
-              <a href="https://github.com/fjg00" target="_blank" rel="noopener">
-                github.com/fjg00
               </a><br />
               Google Scholar:
               <a href="https://scholar.google.com" target="_blank" rel="noopener">view profile</a>
             </p>
             <p class="small-note">
-              I’m happy to chat about systems &amp; control, learning in dynamical systems, teaching, or
-              related chaos.
+              Happy to talk about systems &amp; control, learning for dynamical systems, teaching, or related chaos.
             </p>
           </div>
         </section>
@@ -815,7 +696,7 @@
     </div>
 
     <div class="footer">
-      Built with plain HTML &amp; CSS · Last updated: 2025.
+      Last updated: 2025. Edit this line whenever you change the page.
     </div>
   </div>
 </body>
