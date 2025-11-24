@@ -2,30 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Fatima Ghadieh</title>
+  <title>Fatima J. Ghadieh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Fatima Ghadieh – I like dynamical systems, learning algorithms, and side projects that probably take too much time."
-  />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet"
   />
 
   <style>
     :root {
-      --bg: #020617;           /* very dark navy */
-      --bg-soft: #020617;
-      --text-main: #e5e7eb;    /* light gray */
-      --text-muted: #9ca3af;
-      --accent: #38bdf8;       /* cyan */
-      --accent-alt: #a855f7;   /* purple */
-      --border-subtle: #1f2933;
-      --max-width: 820px;
+      --bg: #f5f5f5;
+      --page-bg: #ffffff;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --accent: #111827;
+      --border: #e5e7eb;
+      --max-width: 840px;
     }
 
     * {
@@ -39,9 +34,9 @@
     }
 
     body {
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at top, #0b1120 0, #020617 55%, #020617 100%);
+      background: var(--bg);
       color: var(--text-main);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
@@ -57,79 +52,64 @@
 
     .page {
       max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 24px 16px 40px;
-    }
-
-    /* top bar */
-
-    .top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 18px;
-    }
-
-    .top-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo {
-      width: 32px;
-      height: 32px;
+      margin: 24px auto 40px;
+      padding: 24px 20px 32px;
+      background: var(--page-bg);
       border-radius: 10px;
-      background: radial-gradient(circle at 0 0, #38bdf8 0, #0ea5e9 35%, #4f46e5 75%, #a855f7 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #f9fafb;
-      font-weight: 700;
-      font-size: 0.9rem;
-      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.7);
+      border: 1px solid var(--border);
     }
 
-    .brand-text {
+    /* header */
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+
+    .name-block {
       display: flex;
       flex-direction: column;
       gap: 2px;
     }
 
-    .brand-name {
-      font-size: 0.98rem;
-      letter-spacing: 0.16em;
+    .name-block h1 {
+      font-size: 1.9rem;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       font-weight: 600;
     }
 
-    .brand-sub {
-      font-size: 0.86rem;
+    .name-sub {
+      font-size: 0.9rem;
       color: var(--text-muted);
     }
 
-    .nav {
+    nav {
+      font-size: 0.85rem;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      font-size: 0.85rem;
     }
 
-    .nav a {
+    nav a {
       color: var(--text-muted);
-      padding-bottom: 2px;
+      padding-bottom: 1px;
       border-bottom: 1px solid transparent;
     }
 
-    .nav a:hover {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
+    nav a:hover {
+      color: var(--text-main);
+      border-bottom-color: var(--text-main);
       text-decoration: none;
     }
 
-    @media (max-width: 720px) {
-      .top {
+    @media (max-width: 700px) {
+      header {
         flex-direction: column;
         align-items: flex-start;
       }
@@ -138,37 +118,31 @@
     /* sections */
 
     section {
-      padding: 14px 0 16px;
-      border-bottom: 1px solid rgba(15, 23, 42, 0.9);
+      padding: 12px 0 16px;
+      border-bottom: 1px solid var(--border);
     }
 
     section:last-of-type {
       border-bottom: none;
     }
 
-    .section-label {
-      font-size: 0.8rem;
+    .section-title {
+      font-size: 0.9rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
+      font-weight: 500;
       color: var(--text-muted);
       margin-bottom: 4px;
     }
 
-    h1 {
-      font-size: clamp(1.9rem, 3vw, 2.4rem);
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    h2 {
-      font-size: 1.02rem;
+    .section-heading {
+      font-size: 1rem;
       font-weight: 600;
       margin-bottom: 4px;
     }
 
     p {
-      font-size: 0.94rem;
-      color: #e5e7eb;
+      font-size: 0.93rem;
       margin-bottom: 6px;
     }
 
@@ -176,14 +150,8 @@
       margin-bottom: 0;
     }
 
-    .muted {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-    }
-
     ul {
       font-size: 0.9rem;
-      color: #e5e7eb;
       padding-left: 1.1rem;
     }
 
@@ -191,125 +159,20 @@
       margin-top: 4px;
     }
 
+    .muted {
+      color: var(--text-muted);
+    }
+
     strong {
       font-weight: 600;
-      color: #f9fafb;
     }
-
-    /* hero / hello */
-
-    .hello-tagline {
-      font-size: 0.96rem;
-      color: var(--text-muted);
-      margin-bottom: 10px;
-    }
-
-    .hello-tagline span {
-      color: var(--accent);
-      font-weight: 500;
-    }
-
-    .hero-actions {
-      margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .btn-main,
-    .btn-ghost {
-      font-size: 0.86rem;
-      border-radius: 999px;
-      padding: 5px 12px;
-      border: 1px solid transparent;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    .btn-main {
-      background: #f9fafb;
-      color: #020617;
-      border-color: #f9fafb;
-    }
-
-    .btn-ghost {
-      background: transparent;
-      color: var(--text-main);
-      border-color: #1f2937;
-    }
-
-    .btn-main:hover,
-    .btn-ghost:hover {
-      filter: brightness(1.05);
-      text-decoration: none;
-    }
-
-    /* small inline chips */
-
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 4px;
-      margin-bottom: 4px;
-    }
-
-    .chip {
-      font-size: 0.75rem;
-      padding: 2px 7px;
-      border-radius: 999px;
-      border: 1px solid #1f2937;
-      background: rgba(15, 23, 42, 0.9);
-      color: #e5e7eb;
-    }
-
-    /* updates */
-
-    .updates {
-      font-size: 0.9rem;
-    }
-
-    .update-item + .update-item {
-      margin-top: 4px;
-    }
-
-    .update-date {
-      font-weight: 500;
-      color: #e5e7eb;
-      margin-right: 4px;
-    }
-
-    .update-emoji {
-      margin-right: 4px;
-    }
-
-    /* list blocks */
-
-    .simple-list {
-      font-size: 0.9rem;
-    }
-
-    .simple-list li + li {
-      margin-top: 4px;
-    }
-
-    /* contact */
 
     .contact-block p {
       margin-bottom: 4px;
     }
 
-    .small-note {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-top: 6px;
-    }
-
     .footer {
-      margin-top: 16px;
+      margin-top: 12px;
       font-size: 0.78rem;
       color: var(--text-muted);
       text-align: right;
@@ -318,209 +181,159 @@
 </head>
 <body>
   <div class="page">
-    <!-- TOP -->
-    <header class="top">
-      <div class="top-left">
-        <div class="logo">FG</div>
-        <div class="brand-text">
-          <div class="brand-name">FATIMA GHADIEH</div>
-          <div class="brand-sub">dynamical systems · learning · side quests</div>
+    <header>
+      <div class="name-block">
+        <h1>FATIMA J. GHADIEH</h1>
+        <div class="name-sub">
+          Direct-PhD, Electrical &amp; Computer Engineering · Systems &amp; Control · University of Toronto
         </div>
       </div>
-      <nav class="nav">
-        <a href="#hello">hello</a>
+      <nav>
+        <a href="#about">about</a>
         <a href="#now">now</a>
-        <a href="#work-study">work / study</a>
+        <a href="#research">research</a>
         <a href="#teaching">teaching</a>
-        <a href="#papers">papers</a>
+        <a href="#publications">publications</a>
+        <a href="#updates">updates</a>
+        <a href="#awards">awards</a>
         <a href="#contact">contact</a>
       </nav>
     </header>
 
-    <!-- HELLO -->
-    <section id="hello">
-      <div class="section-label">hello</div>
-      <h1>Hi, I’m Fatima.</h1>
-      <p class="hello-tagline">
-        I like <span>dynamical systems</span>, algorithms with actual guarantees, and projects that
-        probably don’t fit neatly into one box.
+    <section id="about">
+      <div class="section-title">about</div>
+      <p>
+        Direct-PhD student in the Systems Control Group at the University of Toronto, advised by
+        <strong>Mireille E. Broucke</strong>.
       </p>
       <p>
-        On paper, I’m a Direct-PhD student in Electrical &amp; Computer Engineering at the University of
-        Toronto, working in systems &amp; control. Off paper, I split my time between proofs, experiments,
-        teaching, and way too many side ideas.
+        Research area: <strong>system identification for stable LTI systems</strong>, using adaptive observers
+        and tools from systems &amp; control.
       </p>
-      <div class="hero-actions">
-        <a class="btn-main" href="cv.pdf" target="_blank" rel="noopener">download cv</a>
-        <a class="btn-ghost" href="#now">what I’m doing now ↓</a>
-      </div>
+      <p>
+        B.E. in Electrical &amp; Computer Engineering from the <strong>American University of Beirut</strong>
+        (CGPA 4.0, Dean’s Honor List).
+      </p>
+      <p>
+        Past research experience at the <strong>Adaptive Systems Laboratory, EPFL</strong>, working on
+        multi-agent reinforcement learning in decentralized POMDPs.
+      </p>
+      <!-- if you want it to feel more like you, overwrite these 3–4 sentences with your own text -->
     </section>
 
-    <!-- NOW -->
     <section id="now">
-      <div class="section-label">what I’m doing now</div>
+      <div class="section-title">now</div>
       <p>
-        🧠 Thinking about how to identify <strong>stable linear systems</strong> using adaptive observers
-        without breaking stability.
-      </p>
-      <p>
-        🎓 Surviving / enjoying my PhD in the <strong>Systems Control Group</strong> at UofT with
-        <strong>Mireille&nbsp;E. Broucke</strong>.
+        Working on indirect identification of stable linear systems via adaptive observers, with a focus on
+        convergence and robustness guarantees.
       </p>
       <p>
-        👩‍🏫 TA-ing control / robotics courses and helping students debug both their MATLAB and their intuition.
+        Ongoing: writing, polishing proofs, and running simulations; TA work in control / robotics courses;
+        occasional time spent thinking about system-theoretic views of learning.
       </p>
-      <p class="muted">
-        Season of life: a lot of math, a lot of code, occasional moments of “oh, this actually works”.
-      </p>
+      <!-- replace this with whatever “now” means for you -->
     </section>
 
-    <!-- WORK / STUDY -->
-    <section id="work-study">
-      <div class="section-label">work / study</div>
-      <h2>Academic side (the structured part)</h2>
-      <p>
-        I’m doing a Direct-PhD in Systems &amp; Control at the University of Toronto. My current research is
-        on <strong>indirect identification of stable LTI systems via adaptive observers</strong> — basically
-        trying to make “learning the system” and “not destabilizing everything” go hand in hand.
-      </p>
-      <p>
-        Before that, I did my B.E. in Electrical &amp; Computer Engineering at the
-        <strong>American University of Beirut (AUB)</strong>, graduated with a 4.0 CGPA and Dean’s Honor List,
-        and spent a summer at the <strong>Adaptive Systems Laboratory (EPFL)</strong> working on
-        <strong>multi-agent reinforcement learning in decentralized POMDPs</strong>.
-      </p>
-
-      <div class="chip-row">
-        <span class="chip">systems &amp; control</span>
-        <span class="chip">stable LTI systems</span>
-        <span class="chip">adaptive observers</span>
-        <span class="chip">decentralized POMDPs</span>
-        <span class="chip">multi-agent RL</span>
-      </div>
-
-      <h2 style="margin-top:10px;">Things my brain loops on</h2>
+    <section id="research">
+      <div class="section-title">research</div>
+      <p class="section-heading">Current themes</p>
       <ul>
         <li>
-          Turning <strong>structure</strong> in dynamical systems into learning / identification algorithms
-          with guarantees (not just pretty plots).
+          Adaptive observer–based identification for stable LTI systems.
         </li>
         <li>
-          How <strong>communication and partial observability</strong> change what’s possible in multi-agent
-          systems.
+          Decentralized learning and policy evaluation in partially observable settings.
         </li>
         <li>
-          Shared control and <strong>human–machine interaction</strong> for automated driving (driver intention,
-          handover, all the fun / scary bits).
+          Shared control and human–machine interaction for automated driving.
         </li>
         <li>
-          Using data from courses to make <strong>intro programming</strong> less painful for 150+ students at a time.
+          Data-driven analysis of large introductory programming courses.
         </li>
       </ul>
+      <!-- you can change these bullets to match your own phrasing / priorities -->
     </section>
 
-    <!-- TEACHING -->
     <section id="teaching">
-      <div class="section-label">teaching</div>
-      <h2>Helping other people fight with systems &amp; code</h2>
-      <p class="muted">
-        Some of the courses I’ve TA’d or supported:
-      </p>
-
+      <div class="section-title">teaching</div>
+      <p class="section-heading">Courses</p>
       <ul>
         <li>
-          <strong>ECE 411 – Adaptive Control and Reinforcement Learning (UofT)</strong><br />
-          Teaching assistant · Tutorials and control-design exercises using MATLAB and simulation tools.
+          <strong>ECE 411 – Adaptive Control and Reinforcement Learning</strong>, University of Toronto  
+          Teaching assistant (tutorials and control-design exercises using MATLAB and simulations).
         </li>
         <li>
-          <strong>ECE 470 – Robot Modeling and Control (UofT)</strong><br />
-          Teaching assistant · Practical sessions on robot dynamics and feedback control.
+          <strong>ECE 470 – Robot Modeling and Control</strong>, University of Toronto  
+          Teaching assistant (robot dynamics and feedback control).
         </li>
         <li>
-          <strong>EECE 230X – Introduction to Computation and Programming (AUB)</strong><br />
-          Data analyst &amp; coordinator for a mixed-learning offering with 150+ students and 14 coding coaches;
-          lots of spreadsheets, plots, and trying to understand how students actually learn.
+          <strong>EECE 230X – Introduction to Computation and Programming</strong>, AUB  
+          Data analyst and coordinator for a mixed-learning offering (150+ students, 14 coding coaches).
         </li>
       </ul>
     </section>
 
-    <!-- PAPERS -->
-    <section id="papers">
-      <div class="section-label">a few papers</div>
-      <p class="muted">
-        Not a full list, just the current highlights. For everything, use Google Scholar.
-      </p>
+    <section id="publications">
+      <div class="section-title">publications</div>
+      <p class="section-heading">Selected</p>
       <ul>
         <li>
-          <strong>Indirect Identification of Stable Linear Systems using an Adaptive Observer</strong><br />
-          F. J. Ghadieh, M. E. Broucke. Submitted to IEEE Transactions on Automatic Control, 2025.
+          F. J. Ghadieh, M. E. Broucke, “Indirect Identification of Stable Linear Systems using an Adaptive
+          Observer”, submitted to <em>IEEE Transactions on Automatic Control</em>, 2025.
         </li>
         <li>
-          <strong>Policy Evaluation in Decentralized POMDPs with Belief Sharing</strong><br />
-          M. Kayaalp, F. J. Ghadieh, A. H. Sayed. IEEE Open Journal of Control Systems, 2023.
+          M. Kayaalp, F. J. Ghadieh, A. H. Sayed, “Policy Evaluation in Decentralized POMDPs with Belief
+          Sharing”, <em>IEEE Open Journal of Control Systems</em>, 2023.
         </li>
       </ul>
+      <!-- add / remove entries as needed -->
     </section>
 
-    <!-- UPDATES -->
     <section id="updates">
-      <div class="section-label">tiny updates log</div>
-      <div class="updates">
-        <div class="update-item">
-          <span class="update-emoji">📝</span>
-          <span class="update-date">Jan 2025.</span>
-          Submitted a paper on indirect identification of stable linear systems using adaptive observers to IEEE TAC.
-        </div>
-        <div class="update-item">
-          <span class="update-emoji">🤝</span>
-          <span class="update-date">Jul 2024.</span>
-          Volunteered at the American Control Conference in Toronto.
-        </div>
-        <div class="update-item">
-          <span class="update-emoji">📄</span>
-          <span class="update-date">2023.</span>
-          Decentralized POMDPs + belief sharing paper came out in the IEEE Open Journal of Control Systems.
-        </div>
-        <div class="update-item">
-          <span class="update-emoji">🎓</span>
-          <span class="update-date">Sep 2023.</span>
-          Started my Direct-PhD in Systems &amp; Control at UofT.
-        </div>
-        <div class="update-item">
-          <span class="update-emoji">🎉</span>
-          <span class="update-date">May 2023.</span>
-          Finished my B.E. at AUB and received the LebNet Early in Career Scholarship and the MEPI TLS Gender Scholarship.
-        </div>
-      </div>
+      <div class="section-title">updates</div>
+      <ul>
+        <li>Jan 2025 – TAC submission on indirect identification of stable linear systems via adaptive observers.</li>
+        <li>Jul 2024 – Volunteer at the American Control Conference, Toronto.</li>
+        <li>2023 – Decentralized POMDPs paper published in the IEEE Open Journal of Control Systems.</li>
+        <li>Sep 2023 – Started Direct-PhD in Systems &amp; Control at UofT.</li>
+        <li>May 2023 – Completed B.E. at AUB; LebNet Early in Career Scholarship and MEPI TLS Gender Scholarship.</li>
+      </ul>
+      <!-- this can just be a chronological list you edit occasionally -->
     </section>
 
-    <!-- ELSEWHERE / CONTACT -->
+    <section id="awards">
+      <div class="section-title">awards</div>
+      <ul>
+        <li>LebNet Early in Career Scholarship, 2023.</li>
+        <li>EPFL Master Excellence Scholarship (declined), 2023.</li>
+        <li>MEPI TLS Gender Scholarship, United States Middle East Partnership Initiative, 2023.</li>
+      </ul>
+    </section>
+
     <section id="contact">
-      <div class="section-label">elsewhere / contact</div>
-      <p>
-        best email:
-        <a href="mailto:fatima.ghadieh@mail.utoronto.ca">fatima.ghadieh@mail.utoronto.ca</a><br />
-        alt:
-        <a href="mailto:fatimaghadieh2@gmail.com">fatimaghadieh2@gmail.com</a>
-      </p>
-      <p>
-        github:
-        <a href="https://github.com/fjg00" target="_blank" rel="noopener">github.com/fjg00</a><br />
-        linkedin:
-        <a href="https://www.linkedin.com/in/fatima-ghadieh" target="_blank" rel="noopener">
-          /in/fatima-ghadieh
-        </a><br />
-        google scholar:
-        <a href="https://scholar.google.com" target="_blank" rel="noopener">find me there</a>
-      </p>
-      <p class="small-note">
-        If you’re into systems &amp; control, learning for dynamical systems, or teaching / mentoring in this space,
-        feel free to reach out.
-      </p>
+      <div class="section-title">contact</div>
+      <div class="contact-block">
+        <p>
+          Email: <a href="mailto:fatima.ghadieh@mail.utoronto.ca">fatima.ghadieh@mail.utoronto.ca</a><br />
+          Alt: <a href="mailto:fatimaghadieh2@gmail.com">fatimaghadieh2@gmail.com</a>
+        </p>
+        <p>
+          GitHub: <a href="https://github.com/fjg00" target="_blank" rel="noopener">github.com/fjg00</a><br />
+          LinkedIn:
+          <a href="https://www.linkedin.com/in/fatima-ghadieh" target="_blank" rel="noopener">
+            /in/fatima-ghadieh
+          </a><br />
+          Google Scholar:
+          <a href="https://scholar.google.com" target="_blank" rel="noopener">scholar profile</a>
+        </p>
+        <p class="muted">
+          CV (PDF): <a href="cv.pdf" target="_blank" rel="noopener">download here</a>
+        </p>
+      </div>
     </section>
 
     <div class="footer">
-      last updated: 2025 · built with plain html + css
+      Last updated: 2025.
     </div>
   </div>
 </body>
