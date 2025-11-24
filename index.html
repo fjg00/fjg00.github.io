@@ -1,227 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fatima J. Ghadieh</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        :root {
-            --bg: #fffbf7; /* Very subtle warm paper color */
-            --text-main: #1e293b; /* Deep slate, softer than black */
-            --text-light: #64748b;
-            --accent: #e11d48; /* Passionate Coral/Rose */
-            --accent-soft: #fecdd3;
-            --card-bg: #ffffff;
-            --border: #e2e8f0;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.8;
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 850px;
-            margin: 0 auto;
-        }
-
-        /* --- Typography --- */
-        h1, h2, h3 { 
-            font-family: 'Playfair Display', serif; 
-            color: #0f172a;
-        }
-
-        h1 {
-            font-size: 3rem;
-            line-height: 1.2;
-            margin-bottom: 0.5rem;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        /* A creative underline accent */
-        h2::after {
-            content: '';
-            display: block;
-            width: 40%;
-            height: 3px;
-            background-color: var(--accent);
-            margin-top: 5px;
-            border-radius: 2px;
-        }
-
-        p { margin-bottom: 1.2rem; font-size: 1.05rem; }
-
-        a { color: var(--text-main); text-decoration: none; border-bottom: 1px solid var(--accent); transition: 0.2s; }
-        a:hover { background-color: var(--accent-soft); color: #000; }
-
-        /* --- Hero Section --- */
-        header { 
-            margin-bottom: 3rem; 
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 2rem;
-        }
-
-        .intro-text {
-            font-size: 1.25rem;
-            font-weight: 300;
-            color: #334155;
-            border-left: 4px solid var(--accent);
-            padding-left: 20px;
-            margin: 2rem 0;
-        }
-
-        /* --- Cards for Highlights --- */
-        .grid-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin: 2rem 0;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 25px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s;
-        }
-
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
-        .card h3 { font-size: 1.2rem; margin-bottom: 10px; }
-        .card-icon { color: var(--accent); font-size: 1.5rem; margin-bottom: 10px; display: block; }
-
-        /* --- Lists --- */
-        .experience-item { margin-bottom: 1.5rem; padding-left: 15px; border-left: 1px solid #cbd5e1; }
-        .experience-title { font-weight: 600; font-size: 1.1rem; display: block; }
-        .experience-meta { font-size: 0.9rem; color: var(--text-light); margin-bottom: 0.5rem; display: block; }
-
-        .pub-list { list-style: none; }
-        .pub-list li { margin-bottom: 1.5rem; }
-        .pub-title { font-weight: 600; display: block; }
-
-        /* --- Footer --- */
-        footer {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-        
-        .social-links { margin-bottom: 10px; }
-        .social-links a { margin: 0 10px; font-size: 1.2rem; border-bottom: none; }
-        .social-links a:hover { color: var(--accent); background: none; }
-
-    </style>
+  <meta charset="UTF-8" />
+  <title>Fatima J. Ghadieh · Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-    <div class="container">
-        
-        <header>
-            <h1>Fatima J. Ghadieh</h1>
-            <div class="subtitle">Direct-PhD Candidate • Systems Control • Educator</div>
-            
-            <div class="social-links">
-                <a href="mailto:fatima.ghadieh@mail.utoronto.ca"><i class="fas fa-envelope"></i></a>
-                <a href="https://github.com/fjg00"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/fatima-ghadieh"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </header>
-
-        <p class="intro-text">
-            I am driven by the elegance of mathematics and the utility of engineering. 
-            [cite_start]Currently, I am at the <strong>University of Toronto</strong> [cite: 4] investigating how we can make systems "know" themselves through 
-            [cite_start]<strong>adaptive observers</strong> and <strong>system identification</strong>[cite: 31]. My goal is to build the theoretical backbone for the next generation of autonomous control.
-        </p>
-
-        <div class="grid-cards">
-            <div class="card">
-                <span class="card-icon"><i class="fas fa-microscope"></i></span>
-                <h3>The Research</h3>
-                <p style="font-size: 0.95rem;">
-                    Working with <strong>Prof. [cite_start]Mireille E. Broucke</strong> [cite: 5] on the indirect identification of stable LTI systems. I bridge the gap between rigorous control theory and practical application.
-                </p>
-            </div>
-            <div class="card">
-                <span class="card-icon"><i class="fas fa-chalkboard-user"></i></span>
-                <h3>The Teaching</h3>
-                <p style="font-size: 0.95rem;">
-                    I believe in lifting others as we climb. [cite_start]From coordinating 14 coaches for 150+ students at AUB [cite: 27, 28] [cite_start]to mentoring with LebNet[cite: 37], education is my second passion.
-                </p>
-            </div>
+  <div class="page">
+    <header>
+      <div class="top-row">
+        <div class="title-block">
+          <div class="name-line">
+            <span>Fatima</span> J. Ghadieh
+          </div>
+          <div class="subtitle">
+            Direct-PhD in <span>Electrical &amp; Computer Engineering</span>, Systems &amp; Control · University of Toronto
+          </div>
         </div>
+        <nav>
+          <a href="index.html" class="active">home</a>
+          <a href="research.html">research</a>
+          <a href="teaching.html">teaching</a>
+          <a href="publications.html">papers</a>
+        </nav>
+      </div>
 
-        <section>
-            <h2>Selected Publications</h2>
-            <ul class="pub-list">
-                <li>
-                    <span class="pub-title">Indirect Identification of Stable Linear Systems using an Adaptive Observer</span>
-                    Ghadieh, F. J., Broucke, M. E. <br>
-                    [cite_start]<span style="color: var(--accent); font-style: italic;">Submitted to IEEE Transactions on Automatic Control (TAC), 2025</span> [cite: 31]
-                </li>
-                <li>
-                    <span class="pub-title">Policy Evaluation in Decentralized POMDPs with Belief Sharing</span>
-                    Kayaalp, M., Ghadieh, F. J., & Sayed, A. H. <br>
-                    [cite_start]<span style="color: var(--accent); font-style: italic;">IEEE Open Journal for Control Systems, 2023</span> [cite: 32]
-                </li>
-            </ul>
-        </section>
+      <p>
+        I study and work with dynamical systems. Right now that mostly means
+        <strong>system identification for stable linear systems</strong> using
+        <strong>adaptive observers</strong>, in the Systems &amp; Control group at the University of Toronto
+        (with <strong>Mireille&nbsp;E. Broucke</strong>).
+      </p>
 
-        <section>
-            <h2>Impact & Experience</h2>
-            
-            <div class="experience-item">
-                <span class="experience-title">Learning & Development Coordinator</span>
-                <span class="experience-meta">GRADSWE at UofT | [cite_start]2024–2025 [cite: 37]</span>
-                <p>Creating pathways for graduate women engineers to develop technical and soft skills.</p>
-            </div>
+      <div class="chip-row">
+        <span class="chip">systems &amp; control</span>
+        <span class="chip">stable LTI systems</span>
+        <span class="chip">adaptive observers</span>
+        <span class="chip">decentralized POMDPs</span>
+        <span class="chip">multi-agent RL</span>
+      </div>
 
-            <div class="experience-item">
-                <span class="experience-title">Data Analyst & Team Lead</span>
-                <span class="experience-meta">AUB (EECE 230X) | [cite_start]2022 [cite: 25, 26]</span>
-                [cite_start]<p>Managed a team of 14 coding coaches and performed statistical analysis on the performance of 150+ students, directly influencing course structure[cite: 27, 28].</p>
-            </div>
+      <div class="hero-actions">
+        <a class="btn-main" href="cv.pdf" target="_blank" rel="noopener">download cv</a>
+        <a class="btn-ghost" href="publications.html">view papers</a>
+      </div>
+    </header>
 
-            <div class="experience-item">
-                <span class="experience-title">Research Intern (E3 Fellowship)</span>
-                <span class="experience-meta">EPFL, Switzerland | [cite_start]2022 [cite: 20]</span>
-                <p>Selected for a 2% admission rate program. [cite_start]Developed Python simulations for Multi-Agent Reinforcement Learning in grid world scenarios[cite: 20, 24].</p>
-            </div>
-        </section>
+    <main>
+      <div class="section-heading">
+        <div class="section-label">about</div>
+        <h2>Short bio</h2>
+      </div>
+      <p>
+        I am a Direct-PhD student in the Systems Control Group at the University of Toronto. My current work focuses on
+        indirect identification of stable linear time invariant systems via adaptive observers.
+      </p>
+      <p>
+        Before Toronto, I completed a B.E. in Electrical and Computer Engineering at the
+        <strong>American University of Beirut</strong>, graduating with a 4.0 CGPA and Dean’s Honor List recognition.
+        I spent a summer as an E3 research intern at the <strong>Adaptive Systems Laboratory, EPFL</strong>, working on
+        multi-agent reinforcement learning in decentralized POMDPs.
+      </p>
 
-        <footer>
-            <p>&copy; 2025 Fatima J. Ghadieh. Built with passion & code.</p>
-        </footer>
+      <div class="section-heading">
+        <div class="section-label">now</div>
+        <h2>What I’m doing these days</h2>
+      </div>
+      <ul>
+        <li>Working on an adaptive observer–based identification scheme for stable LTI systems.</li>
+        <li>Polishing a submission on this topic for IEEE Transactions on Automatic Control.</li>
+        <li>TA work in control / robotics courses at UofT.</li>
+        <li>Occasional thinking about learning, observability, and structure in dynamical systems.</li>
+      </ul>
+
+      <div class="section-heading">
+        <div class="section-label">timeline</div>
+        <h2>Small log</h2>
+      </div>
+      <ul>
+        <li><strong>2025</strong> – TAC submission on adaptive observer–based identification for stable LTI systems.</li>
+        <li><strong>2024</strong> – Volunteer at the American Control Conference in Toronto.</li>
+        <li><strong>2023</strong> – Decentralized POMDPs paper published in IEEE Open Journal of Control Systems.</li>
+        <li><strong>2023</strong> – Started Direct-PhD at UofT; completed B.E. at AUB.</li>
+        <li><strong>2023</strong> – LebNet Early in Career Scholarship and MEPI TLS Gender Scholarship.</li>
+      </ul>
+
+      <div class="section-heading">
+        <div class="section-label">contact</div>
+        <h2>How to reach me</h2>
+      </div>
+      <p>
+        Email:
+        <a href="mailto:fatima.ghadieh@mail.utoronto.ca">fatima.ghadieh@mail.utoronto.ca</a><br />
+        Alt:
+        <a href="mailto:fatimaghadieh2@gmail.com">fatimaghadieh2@gmail.com</a>
+      </p>
+      <p>
+        GitHub:
+        <a href="https://github.com/fjg00" target="_blank" rel="noopener">github.com/fjg00</a><br />
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/fatima-ghadieh" target="_blank" rel="noopener">
+          linkedin.com/in/fatima-ghadieh
+        </a><br />
+        Google Scholar:
+        <a href="https://scholar.google.com" target="_blank" rel="noopener">Scholar profile</a>
+      </p>
+    </main>
+
+    <div class="footer">
+      last updated: 2025
     </div>
-
+  </div>
 </body>
 </html>
