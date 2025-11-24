@@ -8,24 +8,29 @@
     name="description"
     content="Academic homepage of Fatima J. Ghadieh, Direct-PhD student in Electrical and Computer Engineering (Systems Control) at the University of Toronto."
   />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap"
     rel="stylesheet"
   />
+
   <style>
     :root {
-      --bg: #f5f5f7;
+      --bg: #f7f7fb;
       --bg-alt: #ffffff;
+      --bg-hero: #0f172a;
       --text-main: #111827;
       --text-muted: #4b5563;
       --border-subtle: #e5e7eb;
-      --accent: #1d4ed8;
-      --accent-soft: #eef2ff;
-      --radius-card: 14px;
-      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.07);
+      --accent: #2563eb;
+      --accent-soft: #e0ebff;
+      --accent-strong: #1d4ed8;
       --max-width: 1120px;
+      --radius-card: 16px;
+      --shadow-soft: 0 14px 40px rgba(15, 23, 42, 0.12);
     }
 
     * {
@@ -51,206 +56,213 @@
       text-decoration: underline;
     }
 
+    /* Page shell */
+
     .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-shell {
+      background: radial-gradient(circle at top left, #1e293b 0, #020617 55%, #020617 100%);
+      color: #e5e7eb;
+      padding: 26px 16px 34px;
+    }
+
+    .hero-inner {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 28px 16px 40px;
     }
 
-    /* Header */
-
-    header.site-header {
+    header.hero-header {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: flex-end;
-      gap: 24px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border-subtle);
+      gap: 16px;
+      margin-bottom: 22px;
     }
 
-    .name-block h1 {
-      font-family: "Source Serif 4", "Times New Roman", serif;
-      font-size: 1.9rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
+    header.hero-header .logo-mark {
+      font-family: "Playfair Display", "Times New Roman", serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #cbd5f5;
     }
 
-    .name-block .subtitle {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-
-    .name-block .affiliation {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    nav.site-nav {
+    nav.hero-nav {
       display: flex;
+      gap: 18px;
+      font-size: 0.86rem;
       flex-wrap: wrap;
-      gap: 14px;
-      font-size: 0.9rem;
     }
 
-    nav.site-nav a {
-      padding-bottom: 3px;
+    nav.hero-nav a {
+      color: #d1d5db;
+      padding-bottom: 2px;
       border-bottom: 1px solid transparent;
     }
 
-    nav.site-nav a:hover {
-      border-bottom-color: var(--accent);
+    nav.hero-nav a:hover {
+      border-bottom-color: #d1d5db;
       text-decoration: none;
     }
 
-    /* Layout */
-
-    main {
-      margin-top: 24px;
+    .hero-main {
       display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.5fr);
-      gap: 28px;
-      align-items: flex-start;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: center;
+      padding-top: 10px;
     }
 
     @media (max-width: 880px) {
-      main {
+      .hero-main {
         grid-template-columns: 1fr;
       }
     }
 
-    /* Sidebar */
-
-    .sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .profile-card {
-      background: var(--bg-alt);
-      border-radius: var(--radius-card);
-      border: 1px solid var(--border-subtle);
-      padding: 18px 16px 16px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .profile-header {
-      display: flex;
-      gap: 14px;
-      align-items: center;
+    .hero-left h1 {
+      font-family: "Playfair Display", "Times New Roman", serif;
+      font-size: clamp(2.1rem, 3.6vw, 2.6rem);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
       margin-bottom: 10px;
     }
 
-    .avatar {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      border: 1px solid var(--border-subtle);
-      background: radial-gradient(circle at 30% 20%, #e0e7ff, #c7d2fe, #a5b4fc);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "Source Serif 4", serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #111827;
+    .hero-tagline {
+      font-size: 0.98rem;
+      color: #cbd5f5;
+      margin-bottom: 14px;
     }
 
-    .profile-header-text {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
+    .hero-bio {
+      font-size: 0.95rem;
+      color: #e5e7eb;
+      max-width: 36rem;
     }
 
-    .profile-title {
-      font-size: 0.97rem;
-      font-weight: 500;
+    .hero-bio strong {
+      font-weight: 600;
+      color: #f9fafb;
     }
 
-    .profile-location {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .contact-list {
-      list-style: none;
-      margin-top: 10px;
-      font-size: 0.9rem;
-    }
-
-    .contact-list li + li {
-      margin-top: 4px;
-    }
-
-    .contact-label {
-      font-weight: 500;
-    }
-
-    .tags-block {
-      margin-top: 10px;
+    .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 10px;
+      margin-top: 16px;
     }
 
-    .tag-chip {
-      font-size: 0.78rem;
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: #f3f4f6;
-      border: 1px solid #e5e7eb;
-      color: #374151;
-    }
-
-    .sidebar-card {
-      background: var(--bg-alt);
-      border-radius: var(--radius-card);
-      border: 1px solid var(--border-subtle);
-      padding: 14px 14px 12px;
-    }
-
-    .sidebar-card h3 {
-      font-family: "Source Serif 4", serif;
-      font-size: 1.02rem;
-      margin-bottom: 6px;
-    }
-
-    .sidebar-card ul {
-      margin-left: 1.1rem;
+    .btn-primary,
+    .btn-ghost {
       font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .sidebar-card ul li + li {
-      margin-top: 3px;
-    }
-
-    .cv-button {
+      border-radius: 999px;
+      padding: 7px 14px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      margin-top: 10px;
-      font-size: 0.9rem;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--accent);
-      background: var(--accent-soft);
-      color: var(--accent);
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #ffffff;
+      color: #111827;
+      border-color: #e5e7eb;
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.45);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.6);
+      color: #e5e7eb;
+      border-color: rgba(148, 163, 184, 0.7);
+    }
+
+    .btn-primary:hover,
+    .btn-ghost:hover {
       text-decoration: none;
+      filter: brightness(1.05);
     }
 
-    .cv-button span {
-      font-size: 0.9rem;
-    }
-
-    /* Content column */
-
-    .content {
+    .hero-right {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 12px;
+    }
+
+    .hero-card {
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      padding: 14px 14px 12px;
+      box-shadow: 0 12px 35px rgba(15, 23, 42, 0.7);
+    }
+
+    .hero-card h2 {
+      font-family: "Playfair Display", "Times New Roman", serif;
+      font-size: 1.02rem;
+      margin-bottom: 4px;
+      color: #e5e7eb;
+    }
+
+    .hero-card p,
+    .hero-card li {
+      font-size: 0.88rem;
+      color: #d1d5db;
+    }
+
+    .hero-card ul {
+      margin-left: 1.1rem;
+      margin-top: 4px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .hero-pill {
+      font-size: 0.76rem;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      color: #e5e7eb;
+    }
+
+    .hero-contact {
+      font-size: 0.86rem;
+      color: #e5e7eb;
+      margin-top: 3px;
+    }
+
+    .hero-contact a {
+      color: #bfdbfe;
+    }
+
+    /* Main content */
+
+    .main-shell {
+      flex: 1;
+      padding: 26px 16px 40px;
+    }
+
+    .main-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.9fr);
+      gap: 26px;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 960px) {
+      .main-inner {
+        grid-template-columns: 1fr;
+      }
     }
 
     section {
@@ -258,19 +270,26 @@
       border-radius: var(--radius-card);
       border: 1px solid var(--border-subtle);
       padding: 16px 18px 14px;
+      box-shadow: var(--shadow-soft);
     }
 
-    section h2 {
-      font-family: "Source Serif 4", "Times New Roman", serif;
+    section + section {
+      margin-top: 18px;
+    }
+
+    h2.section-title {
+      font-family: "Playfair Display", "Times New Roman", serif;
       font-size: 1.2rem;
       margin-bottom: 6px;
     }
 
-    section .section-subtitle {
+    .section-subtitle {
       font-size: 0.86rem;
       color: var(--text-muted);
       margin-bottom: 8px;
     }
+
+    /* About */
 
     #about p {
       font-size: 0.95rem;
@@ -280,40 +299,9 @@
       margin-top: 6px;
     }
 
-    /* News */
-
-    .news-list {
-      list-style: none;
-      margin-top: 4px;
-      font-size: 0.9rem;
-    }
-
-    .news-item {
-      display: grid;
-      grid-template-columns: 96px minmax(0, 1fr);
-      gap: 10px;
-      padding: 6px 0;
-      border-top: 1px dashed var(--border-subtle);
-    }
-
-    .news-item:first-child {
-      border-top: none;
-    }
-
-    .news-date {
-      font-variant-numeric: tabular-nums;
-      color: var(--text-muted);
-      font-size: 0.86rem;
-    }
-
-    .news-text strong {
-      font-weight: 500;
-    }
-
-    /* Lists: research, pubs, teaching, etc. */
+    /* Research / Publications lists */
 
     .item-list {
-      margin-top: 4px;
       font-size: 0.92rem;
     }
 
@@ -322,7 +310,7 @@
     }
 
     .item-list ul li + li {
-      margin-top: 4px;
+      margin-top: 5px;
     }
 
     .pub-title {
@@ -333,15 +321,7 @@
       font-style: italic;
     }
 
-    .teaching-list li span.course {
-      font-weight: 500;
-    }
-
-    .teaching-meta {
-      color: var(--text-muted);
-      font-size: 0.86rem;
-      display: block;
-    }
+    /* Teaching */
 
     .two-column {
       display: grid;
@@ -356,29 +336,140 @@
       }
     }
 
-    .service-item {
+    .teaching-block h3 {
+      font-size: 0.96rem;
+      margin-bottom: 3px;
+    }
+
+    .teaching-list {
       font-size: 0.9rem;
     }
 
-    .service-item span.role {
+    .teaching-list li + li {
+      margin-top: 4px;
+    }
+
+    .teaching-course {
       font-weight: 500;
     }
 
-    .service-item span.org {
-      font-style: italic;
-    }
-
-    .service-item .years {
+    .teaching-meta {
+      font-size: 0.84rem;
       color: var(--text-muted);
-      font-size: 0.86rem;
+      display: block;
     }
 
-    .awards-list li span.award {
+    /* News timeline */
+
+    .timeline {
+      margin-top: 4px;
+      position: relative;
+      padding-left: 10px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 4px;
+      bottom: 4px;
+      width: 1px;
+      background: linear-gradient(to bottom, #d1d5db, rgba(209, 213, 219, 0.4));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 10px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 2px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -1px;
+      top: 2px;
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 2px solid var(--accent);
+    }
+
+    .timeline-date {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .timeline-text {
+      font-size: 0.9rem;
+    }
+
+    .timeline-text strong {
       font-weight: 500;
     }
 
-    .awards-list li span.org {
+    /* Sidebar on right */
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .sidebar section {
+      padding-top: 14px;
+    }
+
+    .tag-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .tag-chip {
+      font-size: 0.78rem;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: #f3f4f6;
+      color: #374151;
+    }
+
+    .awards-list,
+    .service-list {
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+
+    .awards-list li + li,
+    .service-list li + li {
+      margin-top: 4px;
+    }
+
+    .award-name {
+      font-weight: 500;
+    }
+
+    .award-org {
       font-style: italic;
+    }
+
+    .service-role {
+      font-weight: 500;
+    }
+
+    .service-org {
+      font-style: italic;
+    }
+
+    .service-years {
+      color: var(--text-muted);
+      font-size: 0.84rem;
     }
 
     .contact-note {
@@ -386,342 +477,366 @@
       color: var(--text-muted);
       margin-top: 6px;
     }
+
+    footer.site-footer {
+      font-size: 0.78rem;
+      color: #9ca3af;
+      text-align: center;
+      margin-top: 6px;
+    }
   </style>
 </head>
 <body>
   <div class="page">
-    <header class="site-header">
-      <div class="name-block">
-        <h1>FATIMA&nbsp;J. GHADIEH</h1>
-        <div class="subtitle">Direct-PhD Student, Electrical and Computer Engineering</div>
-        <div class="affiliation">
-          Systems Control Group, University of Toronto
-        </div>
-      </div>
-      <nav class="site-nav">
-        <a href="#about">About</a>
-        <a href="#news">News</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#service">Service</a>
-        <a href="#awards">Awards</a>
-        <a href="#cv-contact">CV &amp; Contact</a>
-      </nav>
-    </header>
+    <!-- HERO -->
+    <div class="hero-shell">
+      <div class="hero-inner">
+        <header class="hero-header">
+          <div class="logo-mark">FG</div>
+          <nav class="hero-nav">
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
+            <a href="#teaching">Teaching</a>
+            <a href="#news">News</a>
+            <a href="#awards">Awards</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </header>
 
-    <main>
-      <!-- LEFT: sidebar -->
-      <aside class="sidebar">
-        <div class="profile-card">
-          <div class="profile-header">
-            <div class="avatar">FG</div>
-            <div class="profile-header-text">
-              <div class="profile-title">Systems &amp; Control</div>
-              <div class="profile-location">Toronto, Canada &nbsp;|&nbsp; Beirut, Lebanon</div>
+        <div class="hero-main">
+          <div class="hero-left">
+            <h1>Fatima&nbsp;J. Ghadieh</h1>
+            <div class="hero-tagline">
+              Direct-PhD in Electrical and Computer Engineering, Systems Control Group, University of Toronto
+            </div>
+            <p class="hero-bio">
+              I work on <strong>system identification for stable LTI systems</strong> using
+              <strong>adaptive observers</strong>, with a focus on methods that enjoy both rigorous
+              stability guarantees and practical relevance. My broader interests include learning in
+              dynamical systems, decentralized decision making, and shared control.
+            </p>
+            <div class="hero-buttons">
+              <a class="btn-primary" href="cv.pdf" target="_blank" rel="noopener">
+                <span>Download CV</span>
+              </a>
+              <a class="btn-ghost" href="#news">
+                <span>Recent updates</span>
+              </a>
             </div>
           </div>
 
-          <ul class="contact-list">
-            <li>
-              <span class="contact-label">Email:</span>
-              <a href="mailto:fatima.ghadieh@mail.utoronto.ca">fatima.ghadieh@mail.utoronto.ca</a>
-            </li>
-            <li>
-              <span class="contact-label">Alt:</span>
-              <a href="mailto:fatimaghadieh2@gmail.com">fatimaghadieh2@gmail.com</a>
-            </li>
-            <li>
-              <span class="contact-label">LinkedIn:</span>
+          <div class="hero-right">
+            <div class="hero-card">
+              <h2>Current position</h2>
+              <p>
+                Direct-PhD student in the Systems Control Group at the University of Toronto,
+                advised by <strong>Prof. Mireille E. Broucke</strong>.
+              </p>
+              <div class="hero-meta">
+                <span class="hero-pill">System identification</span>
+                <span class="hero-pill">Adaptive observers</span>
+                <span class="hero-pill">Decentralized RL</span>
+              </div>
+              <p class="hero-contact">
+                Contact: <a href="mailto:fatima.ghadieh@mail.utoronto.ca">fatima.ghadieh@mail.utoronto.ca</a>
+              </p>
+            </div>
+
+            <div class="hero-card">
+              <h2>Previously</h2>
+              <ul>
+                <li>B.E. in Electrical and Computer Engineering, AUB, CGPA 4.0 (Dean&apos;s Honor List).</li>
+                <li>E3 Research Intern at the Adaptive Systems Laboratory, EPFL.</li>
+                <li>Data analyst for a large scale introductory programming course at AUB.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-shell">
+      <div class="main-inner">
+        <!-- LEFT COLUMN -->
+        <div>
+          <section id="about">
+            <h2 class="section-title">About</h2>
+            <div class="section-subtitle">
+              Systems and control, learning, and structure in dynamical systems.
+            </div>
+            <p>
+              I am a Direct-PhD student in the Electrical and Computer Engineering department at the
+              University of Toronto. My research focuses on indirect identification of stable
+              linear time invariant systems using adaptive observer based schemes.
+            </p>
+            <p>
+              I completed my B.E. in Electrical and Computer Engineering at the American University
+              of Beirut in 2023 with a 4.0 CGPA. During my studies, I was an E3 research intern at
+              the Adaptive Systems Laboratory at EPFL, working on multi agent reinforcement
+              learning in partially observable environments, and I worked on shared control and
+              human machine interfaces for autonomous vehicles.
+            </p>
+            <p>
+              I am broadly interested in data driven methods for dynamical systems, and in how
+              mathematical structure can be leveraged to design learning algorithms that come with
+              clear performance and stability guarantees.
+            </p>
+          </section>
+
+          <section id="research">
+            <h2 class="section-title">Research</h2>
+            <div class="section-subtitle">
+              Selected areas I am currently thinking about.
+            </div>
+            <div class="item-list">
+              <ul>
+                <li>
+                  <strong>Adaptive observer based identification.</strong>
+                  Developing indirect identification schemes for stable LTI systems that pair
+                  adaptive observers with classical system identification tools, with an emphasis on
+                  convergence proofs and robustness to modeling uncertainty.
+                </li>
+                <li>
+                  <strong>Learning in decentralized partially observable systems.</strong>
+                  Studying belief sharing and policy evaluation in decentralized POMDPs, including
+                  the effect of communication structure on performance guarantees.
+                </li>
+                <li>
+                  <strong>Shared control for automated driving.</strong>
+                  Using HMI design, simulators, and sequence models to study driver intention
+                  recognition and safe control handover between human drivers and autonomous
+                  vehicles.
+                </li>
+                <li>
+                  <strong>Data informed teaching and learning.</strong>
+                  Applying statistical analysis and simple models to inform the design of mixed
+                  learning introductory programming courses.
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="publications">
+            <h2 class="section-title">Publications</h2>
+            <div class="section-subtitle">
+              For an up to date list, visit my Google Scholar profile.
+            </div>
+            <div class="item-list">
+              <ul>
+                <li>
+                  <span class="pub-title">
+                    Indirect Identification of Stable Linear Systems using an Adaptive Observer.
+                  </span>
+                  <br />
+                  <strong>F. J. Ghadieh</strong>, M. E. Broucke.
+                  <span class="pub-venue">Submitted to IEEE Transactions on Automatic Control</span>,
+                  2025.
+                </li>
+                <li>
+                  <span class="pub-title">
+                    Policy Evaluation in Decentralized POMDPs with Belief Sharing.
+                  </span>
+                  <br />
+                  M. Kayaalp, <strong>F. J. Ghadieh</strong>, A. H. Sayed.
+                  <span class="pub-venue">IEEE Open Journal of Control Systems</span>, 2023.
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="teaching">
+            <h2 class="section-title">Teaching</h2>
+            <div class="section-subtitle">
+              Tutorials, labs, and data guided support for large enrollment courses.
+            </div>
+
+            <div class="two-column">
+              <div class="teaching-block">
+                <h3>University of Toronto</h3>
+                <ul class="teaching-list">
+                  <li>
+                    <span class="teaching-course">
+                      ECE411: Adaptive Control and Reinforcement Learning
+                    </span>
+                    <span class="teaching-meta">
+                      Teaching assistant. Tutorials and control design exercises using MATLAB and
+                      simulation tools.
+                    </span>
+                  </li>
+                  <li>
+                    <span class="teaching-course">
+                      ECE470: Robot Modeling and Control
+                    </span>
+                    <span class="teaching-meta">
+                      Teaching assistant. Practical sessions on robot dynamics and control
+                      implementation.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="teaching-block">
+                <h3>American University of Beirut</h3>
+                <ul class="teaching-list">
+                  <li>
+                    <span class="teaching-course">
+                      EECE 230X: Introduction to Computation and Programming
+                    </span>
+                    <span class="teaching-meta">
+                      Data analyst and coordinator for a mixed learning offering, tracking the
+                      performance of 150+ students and supporting a team of 14 coding coaches.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section id="news">
+            <h2 class="section-title">News and updates</h2>
+            <div class="section-subtitle">
+              A few recent milestones. You can keep adding to this list.
+            </div>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Jan 2025</div>
+                <div class="timeline-text">
+                  <strong>Preprint submitted.</strong>
+                  Submitted <em>Indirect Identification of Stable Linear Systems using an Adaptive Observer</em>
+                  to IEEE TAC.
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Jul 2024</div>
+                <div class="timeline-text">
+                  <strong>Conference service.</strong>
+                  Volunteered at the American Control Conference in Toronto.
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2023</div>
+                <div class="timeline-text">
+                  <strong>Journal publication.</strong>
+                  <em>Policy Evaluation in Decentralized POMDPs with Belief Sharing</em> appeared in
+                  the IEEE Open Journal of Control Systems.
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Sep 2023</div>
+                <div class="timeline-text">
+                  <strong>Started PhD.</strong>
+                  Joined the Systems Control Group at the University of Toronto as a Direct-PhD student.
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">May 2023</div>
+                <div class="timeline-text">
+                  <strong>Graduation and scholarships.</strong>
+                  Completed B.E. at AUB, received the LebNet Early in Career Scholarship and the
+                  MEPI TLS Gender Scholarship.
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- RIGHT COLUMN (SIDEBAR) -->
+        <div class="sidebar">
+          <section id="topics">
+            <h2 class="section-title">Research topics</h2>
+            <div class="tag-grid">
+              <span class="tag-chip">Stable LTI systems</span>
+              <span class="tag-chip">Adaptive observers</span>
+              <span class="tag-chip">System identification</span>
+              <span class="tag-chip">Decentralized POMDPs</span>
+              <span class="tag-chip">Multi agent RL</span>
+              <span class="tag-chip">Shared control</span>
+              <span class="tag-chip">Human machine interaction</span>
+              <span class="tag-chip">Data driven methods</span>
+            </div>
+          </section>
+
+          <section id="awards">
+            <h2 class="section-title">Awards and scholarships</h2>
+            <ul class="awards-list">
+              <li>
+                <span class="award-name">LebNet Early in Career Scholarship</span>,
+                <span class="award-org">LebNet</span>, 2023.
+              </li>
+              <li>
+                <span class="award-name">EPFL Masters Excellence Scholarship</span>,
+                <span class="award-org">EPFL</span>, 2023 (declined).
+              </li>
+              <li>
+                <span class="award-name">MEPI TLS Gender Scholarship Recipient</span>,
+                <span class="award-org">United States Middle East Partnership Initiative</span>, 2023.
+              </li>
+            </ul>
+          </section>
+
+          <section id="service">
+            <h2 class="section-title">Service and activities</h2>
+            <ul class="service-list">
+              <li>
+                <span class="service-role">Mentor,</span>
+                <span class="service-org">LebNet Mentorship Program</span>
+                <span class="service-years"> (2023–2025)</span>
+              </li>
+              <li>
+                <span class="service-role">Learning and Development Coordinator,</span>
+                <span class="service-org">GRADSWE at U of T</span>
+                <span class="service-years"> (2024–2025)</span>
+              </li>
+              <li>
+                <span class="service-role">Volunteer,</span>
+                <span class="service-org">American Control Conference, Toronto</span>
+                <span class="service-years"> (2024)</span>
+              </li>
+              <li>
+                <span class="service-role">Digital Outreach Volunteer,</span>
+                <span class="service-org">American University of Beirut</span>
+                <span class="service-years"> (2020–2021)</span>
+              </li>
+            </ul>
+          </section>
+
+          <section id="contact">
+            <h2 class="section-title">Contact</h2>
+            <p class="item-list" style="font-size:0.9rem;">
+              Email:
+              <a href="mailto:fatima.ghadieh@mail.utoronto.ca">fatima.ghadieh@mail.utoronto.ca</a><br />
+              Alternate:
+              <a href="mailto:fatimaghadieh2@gmail.com">fatimaghadieh2@gmail.com</a><br />
+              LinkedIn:
               <a href="https://www.linkedin.com/in/fatima-ghadieh" target="_blank" rel="noopener">
                 /in/fatima-ghadieh
+              </a><br />
+              GitHub:
+              <a href="https://github.com/fjg00" target="_blank" rel="noopener">github.com/fjg00</a><br />
+              Scholar:
+              <a href="https://scholar.google.com" target="_blank" rel="noopener">
+                Google Scholar profile
               </a>
-            </li>
-            <li>
-              <span class="contact-label">GitHub:</span>
-              <a href="https://github.com/fjg00" target="_blank" rel="noopener">github.com/fjg00</a>
-            </li>
-            <li>
-              <span class="contact-label">Scholar:</span>
-              <a href="https://scholar.google.com/citations?user=Agew-twAAAAJ" target="_blank" rel="noopener">
-                Google Scholar
-              </a>
-            </li>
-          </ul>
+            </p>
+            <p class="contact-note">
+              I am happy to hear from students and collaborators interested in systems and control,
+              learning for dynamical systems, and related areas.
+            </p>
+          </section>
 
-          <a class="cv-button" href="Fatima_Ghadieh_CV.pdf" target="_blank" rel="noopener">
-            <span>View full CV (PDF)</span>
-          </a>
-
-          <div class="tags-block">
-            <span class="tag-chip">System identification</span>
-            <span class="tag-chip">Adaptive observers</span>
-            <span class="tag-chip">Systems &amp; control</span>
-            <span class="tag-chip">Reinforcement learning</span>
-          </div>
+          <footer class="site-footer">
+            Last updated: 2025. Replace this line whenever you edit the page.
+          </footer>
         </div>
-
-        <div class="sidebar-card">
-          <h3>Research areas</h3>
-          <ul>
-            <li>Indirect identification of stable LTI systems</li>
-            <li>Adaptive observers for continuous time systems</li>
-            <li>Multi agent reinforcement learning under partial observability</li>
-            <li>Human machine interaction and shared control for autonomous driving</li>
-            <li>Data driven methods in systems and control</li>
-          </ul>
-        </div>
-
-        <div class="sidebar-card">
-          <h3>Currently</h3>
-          <ul>
-            <li>PhD student, Systems Control Group, University of Toronto</li>
-            <li>Working on adaptive observer based system identification for LTI systems</li>
-            <li>Serving as TA for core control courses and involved in outreach and mentoring</li>
-          </ul>
-        </div>
-      </aside>
-
-      <!-- RIGHT: main content -->
-      <div class="content">
-        <section id="about">
-          <h2>About</h2>
-          <div class="section-subtitle">
-            System identification, adaptive observers, and learning in dynamical systems.
-          </div>
-          <p>
-            I am a Direct-PhD student in the Electrical and Computer Engineering department at the
-            University of Toronto, advised by Prof. Mireille E. Broucke. My research focuses on
-            system identification for stable linear time invariant systems and the design of
-            adaptive observers with rigorous stability guarantees.
-          </p>
-          <p>
-            Before joining U of T, I received my B.E. in Electrical and Computer Engineering from
-            the American University of Beirut (AUB) with a 4.0 CGPA and Dean&apos;s Honor List
-            recognition. I have research experience in multi agent reinforcement learning under
-            partial observability through an internship at the Adaptive Systems Laboratory at EPFL,
-            and I have worked on shared control and human machine interfaces for autonomous
-            driving.
-          </p>
-          <p>
-            Broadly, I am interested in how structure in dynamical systems can be exploited to
-            design reliable identification and learning algorithms that are both theoretically sound
-            and practically implementable.
-          </p>
-        </section>
-
-        <section id="news">
-          <h2>News &amp; Updates</h2>
-          <div class="section-subtitle">
-            Selected recent highlights.
-          </div>
-          <ul class="news-list">
-            <li class="news-item">
-              <div class="news-date">Jan&nbsp;2025</div>
-              <div class="news-text">
-                <strong>Preprint submitted.</strong>
-                Submitted <em>&quot;Indirect Identification of Stable Linear Systems using an Adaptive Observer&quot;</em>
-                to the IEEE Transactions on Automatic Control.
-              </div>
-            </li>
-            <li class="news-item">
-              <div class="news-date">Jul&nbsp;2024</div>
-              <div class="news-text">
-                <strong>Conference service.</strong>
-                Volunteered at the American Control Conference in Toronto.
-              </div>
-            </li>
-            <li class="news-item">
-              <div class="news-date">2023</div>
-              <div class="news-text">
-                <strong>Journal article.</strong>
-                <em>&quot;Policy Evaluation in Decentralized POMDPs with Belief Sharing&quot;</em>
-                appeared in the IEEE Open Journal of Control Systems.
-              </div>
-            </li>
-            <li class="news-item">
-              <div class="news-date">Sep&nbsp;2023</div>
-              <div class="news-text">
-                <strong>Started PhD.</strong>
-                Joined the Systems Control Group at the University of Toronto as a Direct-PhD student.
-              </div>
-            </li>
-            <li class="news-item">
-              <div class="news-date">May&nbsp;2023</div>
-              <div class="news-text">
-                <strong>Graduation.</strong>
-                Completed my B.E. at AUB and received the LebNet Early in Career Scholarship and MEPI TLS Gender Scholarship.
-              </div>
-            </li>
-          </ul>
-        </section>
-
-        <section id="research">
-          <h2>Research</h2>
-          <div class="section-subtitle">
-            A short overview of my current projects and interests.
-          </div>
-          <div class="item-list">
-            <ul>
-              <li>
-                <strong>Adaptive observer based system identification.</strong>
-                Developing indirect identification methods for stable LTI systems that combine
-                adaptive observer techniques with classical system identification tools, with an
-                emphasis on provable convergence and robustness.
-              </li>
-              <li>
-                <strong>Learning in partially observable multi agent systems.</strong>
-                Studying policy evaluation and information sharing in decentralized POMDP settings,
-                including belief sharing architectures and distributed evaluation algorithms.
-              </li>
-              <li>
-                <strong>Human machine interaction in automated driving.</strong>
-                Investigated shared control strategies and driver intention recognition for takeover
-                scenarios, using HMI design, simulators, and deep sequence models.
-              </li>
-              <li>
-                <strong>Data driven evaluation of teaching and learning.</strong>
-                Analyzed performance and engagement data for large scale introductory programming
-                courses delivered in mixed learning formats.
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section id="publications">
-          <h2>Publications</h2>
-          <div class="section-subtitle">
-            See Google Scholar for a complete and up to date list.
-          </div>
-          <div class="item-list">
-            <ul>
-              <li>
-                <span class="pub-title">Indirect Identification of Stable Linear Systems using an Adaptive Observer.</span>
-                <br />
-                <strong>F. J. Ghadieh</strong>, M. E. Broucke. 
-                <span class="pub-venue">Submitted to IEEE Transactions on Automatic Control</span>,
-                2025.
-              </li>
-              <li>
-                <span class="pub-title">Policy Evaluation in Decentralized POMDPs with Belief Sharing.</span>
-                <br />
-                M. Kayaalp, <strong>F. J. Ghadieh</strong>, A. H. Sayed.
-                <span class="pub-venue">IEEE Open Journal of Control Systems</span>, 2023.
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section id="teaching">
-          <h2>Teaching</h2>
-          <div class="section-subtitle">
-            Tutorials, labs, and data driven support for large enrollment courses.
-          </div>
-          <div class="two-column">
-            <div>
-              <h3 style="font-size:0.98rem; margin-bottom:4px;">University of Toronto</h3>
-              <ul class="item-list teaching-list">
-                <li>
-                  <span class="course">ECE411: Adaptive Control and Reinforcement Learning</span>
-                  <span class="teaching-meta">
-                    Teaching assistant (tutorials). Control design labs using MATLAB.
-                  </span>
-                </li>
-                <li>
-                  <span class="course">ECE470: Robot Modeling and Control</span>
-                  <span class="teaching-meta">
-                    Teaching assistant (practical sessions). Robot dynamics and control implementation.
-                  </span>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 style="font-size:0.98rem; margin-bottom:4px;">American University of Beirut</h3>
-              <ul class="item-list teaching-list">
-                <li>
-                  <span class="course">EECE 230X: Introduction to Computation and Programming</span>
-                  <span class="teaching-meta">
-                    Data analyst and coordination of a team of 14 coding coaches for a mixed learning
-                    offering, including statistical analysis of student performance and feedback.
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section id="service">
-          <h2>Service and Activities</h2>
-          <div class="two-column">
-            <div>
-              <div class="service-item">
-                <span class="role">Mentor,</span>
-                <span class="org">LebNet Mentorship Program</span>
-                <span class="years"> &nbsp;2023 to 2025</span>
-              </div>
-              <div class="service-item" style="margin-top:6px;">
-                <span class="role">Learning and Development Coordinator,</span>
-                <span class="org">GRADSWE at U of T</span>
-                <span class="years"> &nbsp;2024 to 2025</span>
-              </div>
-              <div class="service-item" style="margin-top:6px;">
-                <span class="role">Volunteer,</span>
-                <span class="org">American Control Conference, Toronto</span>
-                <span class="years"> &nbsp;2024</span>
-              </div>
-            </div>
-            <div>
-              <div class="service-item">
-                <span class="role">Digital Outreach Volunteer,</span>
-                <span class="org">American University of Beirut</span>
-                <span class="years"> &nbsp;2020 to 2021</span>
-              </div>
-              <div class="service-item" style="margin-top:6px;">
-                <span class="role">Research and outreach roles,</span>
-                <span class="org">Adaptive Systems Laboratory (EPFL), AUB</span>
-                <span class="years"> &nbsp;since 2022</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="awards">
-          <h2>Awards and Scholarships</h2>
-          <ul class="item-list awards-list">
-            <li>
-              <span class="award">LebNet Early in Career Scholarship</span>,
-              <span class="org">LebNet</span>, 2023.
-            </li>
-            <li>
-              <span class="award">EPFL Masters Excellence Scholarship</span>,
-              <span class="org">EPFL</span>, 2023 (declined).
-            </li>
-            <li>
-              <span class="award">MEPI TLS Gender Scholarship Recipient</span>,
-              <span class="org">United States Middle East Partnership Initiative</span>, 2023.
-            </li>
-          </ul>
-        </section>
-
-        <section id="cv-contact">
-          <h2>CV and Contact</h2>
-          <p style="font-size:0.94rem;">
-            A detailed curriculum vitæ with a full list of publications, projects, and professional
-            experiences is available here:
-          </p>
-          <p style="margin-top:6px;">
-            <a class="cv-button" href="Fatima_Ghadieh_CV.pdf" target="_blank" rel="noopener">
-              <span>Download CV (PDF)</span>
-            </a>
-          </p>
-          <p class="contact-note">
-            For research inquiries, potential collaborations, or mentoring related to systems and
-            control, please contact me at
-            <a href="mailto:fatima.ghadieh@mail.utoronto.ca">fatima.ghadieh@mail.utoronto.ca</a>.
-          </p>
-        </section>
       </div>
-    </main>
+    </div>
   </div>
 </body>
 </html>
