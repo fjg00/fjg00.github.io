@@ -1,168 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Fatima J. Ghadieh</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <style>
-    :root {
-      --bg: #ffffff;
-      --text-main: #111827;
-      --text-muted: #6b7280;
-      --max-width: 720px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text-main);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.9;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-    }
-
-    a:hover {
-      text-decoration-thickness: 2px;
-    }
-
-    .container {
-      max-width: var(--max-width);
-      margin: 56px auto 80px;
-      padding: 0 18px;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        margin: 32px auto 56px;
-        padding: 0 14px;
-      }
-    }
-
-    header {
-      margin-bottom: 36px;
-    }
-
-    .name {
-      font-size: 2.2rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .subtitle {
-      font-size: 1rem;
-      color: var(--text-muted);
-      margin-bottom: 14px;
-      max-width: 32rem;
-    }
-
-    .subtitle span {
-      color: var(--text-main);
-      font-weight: 500;
-    }
-
-    nav {
-      margin-top: 6px;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    nav a {
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      padding-bottom: 1px;
-    }
-
-    nav a:hover {
-      border-bottom-color: #9ca3af;
-      color: var(--text-main);
-    }
-
-    main {
-      padding-top: 10px;
-    }
-
-    section {
-      margin-top: 52px;
-    }
-
-    section:first-of-type {
-      margin-top: 0;
-    }
-
-    .section-label {
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
-
-    h2 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 0.96rem;
-      margin-bottom: 12px;
-    }
-
-    p:last-child {
-      margin-bottom: 0;
-    }
-
-    ul {
-      padding-left: 1.1rem;
-      font-size: 0.95rem;
-    }
-
-    ul li + li {
-      margin-top: 6px;
-    }
-
-    strong {
-      font-weight: 600;
-    }
-
-    .muted {
-      color: var(--text-muted);
-    }
-
-    .footer {
-      margin-top: 52px;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      text-align: right;
-    }
-
-    .cv-link {
-      margin-top: 6px;
-      font-size: 0.9rem;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <title>Fatima J. Ghadieh · Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
@@ -172,12 +14,10 @@
         Direct PhD in <span>Electrical &amp; Computer Engineering</span>, Systems &amp; Control Group · University of Toronto
       </div>
       <nav>
-        <a href="#about">about</a>
-        <a href="#now">now</a>
-        <a href="#research">research</a>
-        <a href="#teaching">teaching</a>
-        <a href="#publications">papers</a>
-        <a href="#awards">awards</a>
+        <a href="index.html" class="active">home</a>
+        <a href="research.html">research</a>
+        <a href="teaching.html">teaching</a>
+        <a href="publications.html">papers</a>
       </nav>
       <div class="cv-link">
         <a href="cv.pdf" target="_blank" rel="noopener">download cv (pdf)</a>
@@ -212,68 +52,6 @@
           <li>Thinking about how observer structure and identification guarantees interact.</li>
           <li>TA work in control and robotics courses at UofT.</li>
         </ul>
-      </section>
-
-      <section id="research">
-        <div class="section-label">research</div>
-        <h2>Topics I keep coming back to</h2>
-        <ul>
-          <li>
-            <strong>Adaptive observer–based identification</strong> for stable linear systems, with explicit convergence
-            and robustness guarantees.
-          </li>
-          <li>
-            <strong>Decentralized learning under partial observability</strong> (policy evaluation, belief sharing,
-            communication constraints).
-          </li>
-          <li>
-            <strong>Shared control &amp; HMI</strong> for automated driving, especially handover and driver intention
-            recognition in stop–go scenarios.
-          </li>
-          <li>
-            <strong>Data-informed teaching</strong> in large introductory programming courses.
-          </li>
-        </ul>
-      </section>
-
-      <section id="teaching">
-        <div class="section-label">teaching</div>
-        <h2>Courses I’ve been involved with</h2>
-        <ul>
-          <li>
-            <strong>ECE 411 – Adaptive Control and Reinforcement Learning</strong>, University of Toronto  
-            Teaching assistant – tutorials and control-design exercises using MATLAB and simulation tools.
-          </li>
-          <li>
-            <strong>ECE 470 – Robot Modeling and Control</strong>, University of Toronto  
-            Teaching assistant – labs and problem-solving sessions on robot dynamics and feedback control.
-          </li>
-          <li>
-            <strong>EECE 230X – Introduction to Computation and Programming</strong>, American University of Beirut  
-            Data analyst and coordinator for a mixed-learning offering (150+ students, 14 coding coaches), including
-            performance tracking and statistical analysis.
-          </li>
-        </ul>
-      </section>
-
-      <section id="publications">
-        <div class="section-label">papers</div>
-        <h2>Selected work</h2>
-        <ul>
-          <li>
-            F. J. Ghadieh, M. E. Broucke,  
-            <strong>“Indirect Identification of Stable Linear Systems using an Adaptive Observer”</strong>,  
-            submitted to <em>IEEE Transactions on Automatic Control</em>, 2025.
-          </li>
-          <li>
-            M. Kayaalp, F. J. Ghadieh, A. H. Sayed,  
-            <strong>“Policy Evaluation in Decentralized POMDPs with Belief Sharing”</strong>,  
-            <em>IEEE Open Journal of Control Systems</em>, 2023.
-          </li>
-        </ul>
-        <p class="muted" style="margin-top:10px;">
-          For an up-to-date list, see my Google Scholar profile.
-        </p>
       </section>
 
       <section id="awards">
