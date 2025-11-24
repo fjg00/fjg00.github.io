@@ -3,278 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fatima J. Ghadieh | PhD Candidate</title>
+    <title>Fatima J. Ghadieh | Research & Control Systems</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --sidebar-width: 350px;
-            --primary: #0d9488; /* Modern Teal */
-            --bg: #ffffff;
-            --bg-alt: #f1f5f9;
-            --text-main: #1e293b;
-            --text-light: #64748b;
-            --border: #e2e8f0;
+            --bg: #f9f9f9; /* Soft grey background */
+            --content-bg: #ffffff;
+            --text-main: #2c3e50; /* Deep blue/grey */
+            --text-light: #7f8c8d;
+            --accent: #e67e22; /* Energetic Orange/Gold */
+            --border: #ecf0f1;
+            --max-width: 900px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Outfit', sans-serif;
-            color: var(--text-main);
             background-color: var(--bg);
-            line-height: 1.6;
+            color: var(--text-main);
+            font-family: 'Merriweather', serif; /* Journal feel */
+            line-height: 1.7;
+            padding: 40px 20px;
         }
 
-        /* --- Layout --- */
-        .wrapper {
-            display: flex;
-            min-height: 100vh;
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            background: var(--content-bg);
+            padding: 50px 60px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-radius: 6px;
         }
-
-        /* --- Left Sidebar (Identity) --- */
-        aside {
-            width: var(--sidebar-width);
-            background-color: var(--bg-alt);
-            border-right: 1px solid var(--border);
-            padding: 3rem 2rem;
-            position: fixed;
-            height: 100vh;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        /* --- Right Content (Work) --- */
-        main {
-            flex: 1;
-            margin-left: var(--sidebar-width);
-            padding: 4rem 5rem;
-            max-width: 1000px;
-        }
-
-        /* --- Typography & Elements --- */
+        
+        /* --- Typography --- */
+        .header-section { text-align: center; margin-bottom: 40px; }
+        
         h1 {
-            font-size: 2.5rem;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            color: #0f172a;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.8rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
         }
 
-        .role {
-            font-family: 'Fira Code', monospace;
-            color: var(--primary);
-            font-size: 0.9rem;
+        .tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
             margin-bottom: 2rem;
-            display: inline-block;
-            background: rgba(13, 148, 136, 0.1);
-            padding: 4px 8px;
-            border-radius: 4px;
         }
 
         h2 {
-            font-size: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.6rem;
+            margin-top: 3rem;
             margin-bottom: 1.5rem;
-            color: #0f172a;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 5px;
+            display: inline-block;
         }
 
-        h2::before {
-            content: '#';
-            color: var(--primary);
-            font-family: 'Fira Code', monospace;
-        }
-
-        p { margin-bottom: 1.5rem; color: #334155; }
+        a { color: var(--accent); text-decoration: none; transition: 0.2s; }
+        a:hover { color: var(--text-main); }
         
-        a { color: var(--text-main); text-decoration: none; transition: 0.2s; }
-        a:hover { color: var(--primary); }
+        strong { font-weight: 700; }
 
-        /* --- Sidebar Specifics --- */
-        .profile-bio { font-size: 1rem; color: var(--text-light); }
-        
-        .contact-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 2rem;
+        /* --- Timeline / Journal Design --- */
+        .timeline {
+            position: relative;
+            padding: 1rem 0;
         }
-        .contact-links a { font-size: 1.2rem; opacity: 0.7; }
-        .contact-links a:hover { opacity: 1; color: var(--primary); }
+        
+        /* The main vertical line */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: var(--border);
+            top: 0;
+            bottom: 0;
+            left: 5px; /* Adjust to shift the line */
+        }
 
-        /* --- Content Cards --- */
-        .section-block { margin-bottom: 4rem; }
-
-        .card {
-            border-left: 3px solid var(--border);
-            padding-left: 1.5rem;
+        .timeline-event {
+            position: relative;
             margin-bottom: 2rem;
-            transition: border-color 0.3s;
+            padding-left: 40px; /* Space for the marker */
         }
 
-        .card:hover { border-left-color: var(--primary); }
+        /* The circular markers */
+        .timeline-event::before {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border: 2px solid var(--content-bg);
+            border-radius: 50%;
+            left: 0;
+            top: 5px;
+            z-index: 1;
+            box-shadow: 0 0 0 3px var(--bg);
+        }
 
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
+        .event-date {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .event-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-main);
             margin-bottom: 0.5rem;
         }
-
-        .card-title { font-weight: 700; font-size: 1.1rem; }
-        .card-meta { 
-            font-family: 'Fira Code', monospace; 
-            font-size: 0.85rem; 
-            color: var(--text-light); 
-        }
-
-        .card-subtitle {
-            display: block;
+        
+        .event-meta {
             font-size: 0.95rem;
             color: var(--text-light);
-            font-style: italic;
             margin-bottom: 0.5rem;
+            font-style: italic;
         }
 
-        .tech-stack {
-            font-family: 'Fira Code', monospace;
-            font-size: 0.8rem;
-            color: var(--primary);
-            margin-top: 0.5rem;
+        /* --- Footer --- */
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-light);
         }
 
-        /* --- Mobile Responsive --- */
-        @media (max-width: 850px) {
-            .wrapper { flex-direction: column; }
-            aside { 
-                width: 100%; 
-                position: relative; 
-                height: auto; 
-                border-right: none; 
-                border-bottom: 1px solid var(--border);
-            }
-            main { margin-left: 0; padding: 3rem 1.5rem; }
+        .social-links { margin-top: 10px; }
+        .social-links a { margin: 0 10px; font-size: 1.2rem; }
+        .social-links a:hover { color: var(--text-main); }
+        
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.4rem; }
+            .timeline-event { padding-left: 25px; }
+            .timeline::before { left: -5px; }
+            .timeline-event::before { left: -10px; }
         }
     </style>
 </head>
 <body>
 
-<div class="wrapper">
-    
-    <aside>
-        <div>
+    <div class="container">
+        
+        <div class="header-section">
             <h1>Fatima J. Ghadieh</h1>
-            <span class="role">Direct-PhD @ UofT</span>
+            <p class="tagline">PhD Candidate, Systems Control. Finding the elegant math in autonomy.</p>
             
-            <div class="profile-bio">
-                <p>
-                    I study the mathematics of control. 
-                </p>
-                <p>
-                    Currently bridging the gap between <strong>System Identification</strong> and <strong>Autonomy</strong> at the University of Toronto.
-                </p>
-                <p>
-                    Passionate about teaching machines to learn, and students to engineer.
-                </p>
+            <p style="max-width: 700px; margin: 0 auto 30px; font-size: 1.05rem;">
+                I am a Direct-PhD student at the **University of Toronto**, deeply invested in **System Identification** using adaptive observers. My research is focused on laying down the rigorous theoretical groundwork necessary for robust autonomous control systems. I am passionate about engineering's ability to solve complex problems, and equally passionate about teaching and mentoring the next generation.
+            </p>
+            
+            <div class="social-links">
+                <a href="mailto:fatima.ghadieh@mail.utoronto.ca"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/fjg00"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/fatima-ghadieh"><i class="fab fa-linkedin"></i></a>
+                <a href="Fatima_Ghadieh_CV.pdf" target="_blank"><i class="fas fa-file-pdf"></i></a>
             </div>
         </div>
 
-        <div class="contact-links">
-            <a href="mailto:fatima.ghadieh@mail.utoronto.ca" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://github.com/fjg00" target="_blank" aria-label="Github"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/fatima-ghadieh" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        </div>
-    </aside>
-
-    <main>
-        
-        <section class="section-block" id="research">
-            <h2>Publications</h2>
+        <section id="journey">
+            <h2>The Journey So Far</h2>
             
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">Indirect Identification of Stable Linear Systems using an Adaptive Observer</span>
-                    <span class="card-meta">2025</span>
+            <div class="timeline">
+                
+                <div class="timeline-event">
+                    <span class="event-date">Sep 2023 – Present</span>
+                    <div class="event-title">Direct-PhD in Electrical & Computer Engineering</div>
+                    <div class="event-meta">University of Toronto, Systems Control Group</div>
+                    <p>
+                        Current focus is on developing adaptive observer techniques for the indirect identification of **stable LTI systems** with guaranteed convergence.
+                    </p>
                 </div>
-                <span class="card-subtitle">Submitted to IEEE Transactions on Automatic Control (TAC)</span>
-                <p>Developed a novel adaptive observer framework to identify stable LTI systems, providing rigorous convergence guarantees.</p>
-                <div class="tech-stack">Keywords: Adaptive Control, LTI Systems, Observers</div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">Policy Evaluation in Decentralized POMDPs with Belief Sharing</span>
-                    <span class="card-meta">2023</span>
+                
+                <div class="timeline-event">
+                    <span class="event-date">2025</span>
+                    <div class="event-title">Flagship Publication Submitted to IEEE TAC</div>
+                    <div class="event-meta">"Indirect Identification of Stable Linear Systems using an Adaptive Observer"</div>
+                    <p>
+                        A major milestone in my doctoral work, demonstrating novel identification methods under the guidance of Prof. Mireille E. Broucke.
+                    </p>
                 </div>
-                <span class="card-subtitle">IEEE Open Journal for Control Systems</span>
-                <p>Explored how agents can learn efficiently in decentralized environments by sharing belief states rather than full observations.</p>
-                <div class="tech-stack">Keywords: RL, Multi-Agent Systems, POMDPs</div>
-            </div>
-        </section>
 
-        <section class="section-block" id="experience">
-            <h2>Research & Experience</h2>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">E3 Research Intern</span>
-                    <span class="card-meta">EPFL, Switzerland</span>
+                <div class="timeline-event">
+                    <span class="event-date">May 2023</span>
+                    <div class="event-title">B.E. Graduation (4.0 GPA) & Major Scholarships</div>
+                    <div class="event-meta">American University of Beirut</div>
+                    <p>
+                        Completed my B.E. with Dean's Honor List distinction. Awarded the **LebNet Early in Career Scholarship** and the MEPI-TLS Gender Scholarship.
+                    </p>
                 </div>
-                <span class="card-subtitle">Adaptive Systems Laboratory (ASL) | 2022</span>
-                <p>Selected for the highly competitive E3 Fellowship (2% acceptance). Worked on Multi-Agent Reinforcement Learning simulations for target tracking in grid worlds.</p>
-            </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">HMI & Shared Control Researcher</span>
-                    <span class="card-meta">AUB Final Year Project</span>
+                <div class="timeline-event">
+                    <span class="event-date">Summer 2022</span>
+                    <div class="event-title">E3 Research Internship in Multi-Agent RL</div>
+                    <div class="event-meta">Adaptive Systems Laboratory (ASL), EPFL, Switzerland</div>
+                    <p>
+                        Selected for a highly competitive fellowship (2% acceptance rate). Focused on policy evaluation in **Decentralized POMDPs** (resulted in IEEE paper).
+                    </p>
                 </div>
-                <span class="card-subtitle">2022 — 2023</span>
-                <p>Designed HMI interfaces for autonomous handover. Trained CNN and LSTM models on CARLA simulator data to recognize driver intention.</p>
-            </div>
-        </section>
+                
+                <div class="timeline-event">
+                    <span class="event-date">Jan – Dec 2022</span>
+                    <div class="event-title">Leading Coding Coach Team & Data Analysis</div>
+                    <div class="event-meta">Al Ghurair Hub in Digital Learning, AUB</div>
+                    <p>
+                        Managed a team of 14 coaches for a 150+ student course. This role blended my technical background with strong **team coordination and data insights**.
+                    </p>
+                </div>
 
-        <section class="section-block" id="leadership">
-            <h2>Leadership & Teaching</h2>
-            
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">Learning & Development Coordinator</span>
-                    <span class="card-meta">GRADSWE @ UofT</span>
-                </div>
-                <p style="margin-top: 0.5rem;">Orchestrating workshops and development opportunities for the Graduate Society of Women Engineers.</p>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">Data Analyst & Team Lead</span>
-                    <span class="card-meta">AUB (EECE 230X)</span>
-                </div>
-                <p style="margin-top: 0.5rem;">Led a team of 14 coding coaches and managed performance analytics for 150+ students in Intro to Computation.</p>
-            </div>
-
-             <div class="card">
-                <div class="card-header">
-                    <span class="card-title">Mentor</span>
-                    <span class="card-meta">LebNET</span>
-                </div>
-                <p style="margin-top: 0.5rem;">Mentoring early-career students (2023—2025).</p>
             </div>
         </section>
         
-        <footer style="font-size: 0.8rem; color: var(--text-light); margin-top: 4rem;">
-            &copy; 2025 Fatima J. Ghadieh.
+        <section id="contributions">
+            <h2>Teaching & Service</h2>
+            <p>
+                My commitment extends beyond research; I actively engage in mentorship and creating an inclusive academic environment.
+            </p>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 10px; border-left: 3px solid var(--accent); padding-left: 10px;">
+                    <span style="font-weight: 600;">Learning & Development Coordinator:</span> GRADSWE at UofT (2024–2025).
+                </li>
+                <li style="margin-bottom: 10px; border-left: 3px solid var(--accent); padding-left: 10px;">
+                    <span style="font-weight: 600;">Mentor:</span> LebNET Mentorship Program (2023–2025).
+                </li>
+                <li style="margin-bottom: 10px; border-left: 3px solid var(--accent); padding-left: 10px;">
+                    <span style="font-weight: 600;">Volunteer:</span> American Control Conference (ACC) in Toronto (2024).
+                </li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>Code & Content by Fatima J. Ghadieh.</p>
         </footer>
-
-    </main>
-</div>
+    </div>
 
 </body>
 </html>
