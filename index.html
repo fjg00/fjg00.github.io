@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fatima J. Ghadieh | Command Prompt</title>
+    <title>Fatima J. Ghadieh | Control Systems Architect</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg: #fdfdfd; 
-            --text-main: #111827;
-            --text-light: #6b7280;
-            --accent: #059669; /* Success Green/Teal */
-            --accent-light: #d1fae5;
-            --border: #e5e7eb;
-            --max-width: 800px;
+            --bg: #f9f9f9; 
+            --text-main: #1c3d5a; /* Deep Blueprint Blue */
+            --text-light: #607d8b;
+            --accent: #ff5252; /* Schematic Red/Orange Highlight */
+            --border: #cfd8dc;
+            --max-width: 900px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,7 +26,7 @@
         body {
             background-color: var(--bg);
             color: var(--text-main);
-            font-family: 'Roboto Mono', monospace; /* The console font */
+            font-family: 'Lato', sans-serif;
             line-height: 1.6;
             padding: 40px 20px;
         }
@@ -35,115 +34,163 @@
         .container {
             max-width: var(--max-width);
             margin: 0 auto;
+            background: #ffffff;
+            padding: 50px;
             border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
         }
         
-        /* --- Typography & Links --- */
+        /* --- Header & Intro --- */
+        header { 
+            text-align: center;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        /* Decorative lines for the Schematic effect */
+        header::after, header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            height: 2px;
+            background: var(--border);
+            width: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        header::after {
+            background: var(--accent);
+            width: 15%;
+            bottom: -2px;
+        }
+
         h1 {
-            font-size: 1.8rem;
+            font-weight: 900;
+            font-size: 3rem;
             margin-bottom: 5px;
-            font-weight: 700;
+            color: var(--text-main);
         }
 
         .role {
-            font-size: 0.9rem;
+            font-size: 1.1rem;
             color: var(--text-light);
-            margin-bottom: 20px;
-            display: block;
+            font-weight: 400;
         }
         
+        .intro-text {
+            margin-top: 30px;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        strong { color: var(--accent); font-weight: 700; }
+
+        /* --- Links --- */
         a { 
             color: var(--accent); 
             text-decoration: none; 
-            transition: color 0.2s; 
-            border-bottom: 1px dashed var(--accent);
+            transition: color 0.2s;
+            border-bottom: 1px dotted var(--accent);
         }
         a:hover { color: var(--text-main); border-bottom-color: var(--text-main); }
-        
-        strong { color: var(--accent); font-weight: 600; }
 
-        .comment {
+        .social-links { 
+            display: flex; 
+            justify-content: center;
+            gap: 25px; 
+            margin-top: 25px;
+        }
+        .social-links a { 
+            font-size: 1.5rem; 
+            color: var(--text-main); 
+            border-bottom: none;
+        }
+        .social-links a:hover { color: var(--accent); }
+
+        /* --- Sections & Modular Blocks --- */
+        h2 {
+            font-weight: 700;
+            font-size: 1.6rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 5px;
+        }
+
+        .module-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .module {
+            background: #ffffff;
+            border: 2px solid var(--border);
+            padding: 20px;
+            border-radius: 4px;
+            position: relative;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+
+        .module:hover {
+            border-color: var(--accent);
+            background: #fffafa;
+        }
+
+        .module-title {
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin-bottom: 5px;
+            color: var(--text-main);
+        }
+        
+        .module-meta {
             color: var(--text-light);
             font-size: 0.9rem;
-            margin: 30px 0 10px;
-            display: block;
-        }
-        
-        /* --- Terminal / Shell Effect --- */
-        .prompt {
-            color: var(--text-main);
-            margin-right: 8px;
-        }
-        .prompt-char { color: var(--accent); }
-
-        .intro-block {
-            margin-bottom: 30px;
-            border-left: 2px solid var(--accent);
-            padding-left: 15px;
-            font-size: 0.95rem;
-        }
-        
-        /* --- Content Blocks --- */
-        .section-command {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: var(--text-main);
+            margin-bottom: 10px;
         }
 
-        .item {
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--border);
+        .tag-block {
+            margin-top: 10px;
         }
-
-        .item:last-of-type { border-bottom: none; }
-
-        .item-title {
-            font-weight: 600;
-            font-size: 1rem;
-            display: block;
-        }
-
-        .item-meta {
-            color: var(--text-light);
-            font-size: 0.85rem;
-            display: block;
-            margin-bottom: 5px;
-        }
-        
-        .item-keywords {
-            font-size: 0.8rem;
-            margin-top: 5px;
-        }
-        .item-keywords span {
+        .tag {
             display: inline-block;
-            background: var(--accent-light);
-            color: var(--accent);
-            padding: 1px 6px;
+            background: var(--accent);
+            color: white;
+            padding: 3px 8px;
             border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: 400;
             margin-right: 5px;
         }
-        
+
+        /* --- Icon Marker --- */
+        .icon-marker {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 1.8rem;
+            color: var(--accent);
+            opacity: 0.3;
+        }
+
         /* --- Footer --- */
         footer {
-            margin-top: 40px;
+            margin-top: 50px;
             padding-top: 20px;
             border-top: 1px solid var(--border);
             text-align: center;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--text-light);
         }
 
-        .social-links { margin-top: 15px; }
-        .social-links a { font-size: 1rem; margin: 0 8px; border-bottom: none; }
-        .social-links a:hover { color: var(--text-main); }
-
         @media (max-width: 600px) {
-            .container { padding: 20px 15px; }
-            h1 { font-size: 1.5rem; }
+            .container { padding: 30px 15px; }
+            h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -152,102 +199,96 @@
     <div class="container">
         
         <header>
-            <div class="prompt"><span class="prompt-char">$</span> whoami</div>
             <h1>Fatima J. Ghadieh</h1>
-            <span class="role">Direct-PhD Candidate in Systems Control @ University of Toronto</span>
+            <span class="role">Control Systems Architect | Direct-PhD Candidate, UofT ECE</span>
+            
+            <p class="intro-text">
+                I am a systems thinker, driven by the challenge of imposing order on complexity. My doctoral research at the **University of Toronto** is dedicated to forging robust **adaptive observers** for **System Identification**, aiming to build the theoretical core for true autonomy. My passion lies where mathematics meets mechanism.
+            </p>
+            
+            <div class="social-links">
+                <a href="mailto:fatima.ghadieh@mail.utoronto.ca" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/fjg00" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/fatima-ghadieh" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="Fatima_Ghadieh_CV.pdf" target="_blank" aria-label="CV PDF"><i class="fas fa-file-pdf"></i></a>
+            </div>
         </header>
 
-        <section id="bio">
-            <div class="prompt"><span class="prompt-char">$</span> cat README.md</div>
-            <div class="intro-block">
-                <p>
-                    I am driven by the **rigor of control theory** and the endless possibilities of **autonomous systems**. My current work is focused on System Identification for LTI Systems, where I use **adaptive observers** to achieve guaranteed convergence and robustness.
-                </p>
-                <p>
-                    My background blends theoretical control (UofT, AUB) with practical engineering (EPFL, HMI project), and a passion for community building through teaching and mentorship.
-                </p>
-            </div>
-        </section>
-
         <section id="research">
-            <div class="section-command"><span class="prompt-char">$</span> list_publications --latest</div>
+            <h2><i class="fas fa-satellite-dish" style="color: var(--accent); margin-right: 10px;"></i> The Control Core: Research & Systems</h2>
             
-            <div class="item">
-                <span class="item-title">Indirect Identification of Stable Linear Systems using an Adaptive Observer</span>
-                <span class="item-meta">Submitted to IEEE Transactions on Automatic Control (TAC), 2025</span>
-                <p style="font-size: 0.9rem; margin-top: 5px;">
-                    Focusing on a novel framework to accurately model unknown systems with strong theoretical guarantees.
-                </p>
-                <div class="item-keywords">
-                    <span>#SystemID</span>
-                    <span>#AdaptiveControl</span>
-                    <span>#LTI</span>
+            <div class="module-grid">
+                
+                <div class="module">
+                    <i class="icon-marker fas fa-code-branch"></i>
+                    <div class="module-title">Indirect Identification of Stable LTI Systems</div>
+                    <div class="module-meta">IEEE Transactions on Automatic Control (TAC), Submitted 2025</div>
+                    <p style="font-size: 0.95rem;">
+                        Primary doctoral research on developing a novel adaptive observer framework for robust system identification with provable convergence.
+                    </p>
+                    <div class="tag-block">
+                        <span class="tag">#AdaptiveControl</span>
+                        <span class="tag">#LTITheory</span>
+                        <span class="tag">#UofTSystems</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="item">
-                <span class="item-title">Policy Evaluation in Decentralized POMDPs with Belief Sharing</span>
-                <span class="item-meta">IEEE Open Journal for Control Systems, 2023</span>
-                <p style="font-size: 0.9rem; margin-top: 5px;">
-                    Research from my E3 Fellowship at EPFL on multi-agent reinforcement learning.
-                </p>
-                <div class="item-keywords">
-                    <span>#MARL</span>
-                    <span>#POMDP</span>
-                    <span>#EPFL</span>
+                <div class="module">
+                    <i class="icon-marker fas fa-robot"></i>
+                    <div class="module-title">Decentralized POMDPs & Multi-Agent RL</div>
+                    <div class="module-meta">EPFL E3 Fellowship & IEEE Open Journal for Control Systems (2023)</div>
+                    <p style="font-size: 0.95rem;">
+                        Investigated policy evaluation algorithms for multi-agent systems, focusing on belief sharing in partially observable environments.
+                    </p>
+                    <div class="tag-block">
+                        <span class="tag">#MARL</span>
+                        <span class="tag">#ControlTheory</span>
+                        <span class="tag">#EPFL</span>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="item">
-                <span class="item-title">HMI & Shared Control for Autonomous Vehicles</span>
-                <span class="item-meta">Final Year Project, AUB (2023)</span>
-                <p style="font-size: 0.9rem; margin-top: 5px;">
-                    Used CARLA simulator to train CNN/LSTM models for driver intention recognition during handover.
-                </p>
-                <div class="item-keywords">
-                    <span>#Autonomy</span>
-                    <span>#HMI</span>
-                    <span>#DeepLearning</span>
+                
+                <div class="module">
+                    <i class="icon-marker fas fa-car"></i>
+                    <div class="module-title">HMI & Shared Control for Autonomous Vehicles</div>
+                    <div class="module-meta">Final Year Project, American University of Beirut (AUB)</div>
+                    <p style="font-size: 0.95rem;">
+                        Designed human-machine interfaces and validated deep learning models (CNN/LSTM) to predict and facilitate control handover.
+                    </p>
+                    <div class="tag-block">
+                        <span class="tag">#AutonomousSystems</span>
+                        <span class="tag">#HMI</span>
+                        <span class="tag">#DeepLearning</span>
+                    </div>
                 </div>
+
             </div>
         </section>
 
         <section id="leadership">
-            <div class="section-command"><span class="prompt-char">$</span> status leadership</div>
+            <h2><i class="fas fa-user-friends" style="color: var(--accent); margin-right: 10px;"></i> Knowledge Transfer & System Deployment</h2>
             
-            <div class="item">
-                <span class="item-title">Data Analyst & Team Lead (EECE 230X)</span>
-                <span class="item-meta">AUB | Jan – Dec 2022</span>
-                <p style="font-size: 0.9rem; margin-top: 5px;">
-                    Managed and coordinated a team of **14 coding coaches** and performed statistical analysis on a 150+ student cohort, driving course improvements.
-                </p>
-            </div>
-
-            <div class="item">
-                <span class="item-title">Learning & Development Coordinator, GRADSWE</span>
-                <span class="item-meta">UofT | 2024–2025</span>
-                <p style="font-size: 0.9rem; margin-top: 5px;">
-                    Actively involved in creating development opportunities for graduate women in engineering.
-                </p>
-            </div>
-
-            <div class="item">
-                <span class="item-title">LebNet Early in Career Scholarship Recipient</span>
-                <span class="item-meta">2023</span>
-                <p style="font-size: 0.9rem; margin-top: 5px;">
-                    Awarded based on strong academic record and commitment to mentorship.
-                </p>
+            <div class="module-grid">
+                <div class="module">
+                    <div class="module-title">Team Lead & Data Analyst (AUB)</div>
+                    <div class="module-meta">EECE 230X Introduction to Computation | 2022</div>
+                    <p style="font-size: 0.95rem;">
+                        Managed **14 coding coaches** and performed statistical performance analysis for 150+ students, acting as a crucial interface between faculty and teaching staff.
+                    </p>
+                </div>
+                
+                <div class="module">
+                    <div class="module-title">Learning & Development Coordinator (GRADSWE)</div>
+                    <div class="module-meta">Graduate Society of Women Engineers, UofT | 2024–2025</div>
+                    <p style="font-size: 0.95rem;">
+                        Actively championing professional growth and educational resources for graduate students in engineering.
+                    </p>
+                </div>
             </div>
         </section>
 
+
         <footer>
-            <div class="prompt"><span class="prompt-char">$</span> echo "Connect with me"</div>
-            <div class="social-links">
-                <a href="mailto:fatima.ghadieh@mail.utoronto.ca"><i class="fas fa-envelope"></i> Email</a>
-                <a href="https://github.com/fjg00" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://linkedin.com/in/fatima-ghadieh" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="Fatima_Ghadieh_CV.pdf" target="_blank"><i class="fas fa-file-pdf"></i> CV</a>
-            </div>
+            <p>Built on a foundation of rigor and passion. &copy; <script>document.write(new Date().getFullYear())</script> Fatima J. Ghadieh.</p>
         </footer>
     </div>
 
