@@ -237,6 +237,35 @@ strong {
   min-width: 0;
 }
 
+.bio-entry {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 28px;
+  align-items: flex-start;
+}
+
+.bio-logo {
+  flex-shrink: 0;
+  width: 60px;
+}
+
+.bio-logo img {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+}
+
+.bio-details h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.bio-details p {
+  font-size: 0.93rem;
+  margin-bottom: 4px;
+}
+
 .affiliations {
   display: flex;
   flex-wrap: wrap;
