@@ -203,9 +203,36 @@ strong {
   border-bottom-color: var(--accent);
 }
 
+.sidebar-email {
+  margin-top: 12px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  word-break: break-all;
+  text-align: center;
+}
+
 .about-text {
   flex: 1;
   min-width: 0;
+}
+
+.affiliations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  font-size: 0.95rem;
+}
+
+.affiliations a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.affiliations a:hover {
+  border-bottom-color: var(--accent);
 }
 
 @media (max-width: 600px) {
