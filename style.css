@@ -219,20 +219,23 @@ strong {
 .affiliations {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
-  font-size: 0.95rem;
+  align-items: center;
+  gap: 32px;
 }
 
 .affiliations a {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s;
+  display: inline-block;
+  opacity: 0.7;
+  transition: opacity 0.2s;
 }
 
 .affiliations a:hover {
-  border-bottom-color: var(--accent);
+  opacity: 1;
+}
+
+.affiliations img {
+  height: 45px;
+  width: auto;
 }
 
 @media (max-width: 600px) {
