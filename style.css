@@ -44,13 +44,6 @@ a:hover {
   padding: 0 18px;
 }
 
-@media (max-width: 600px) {
-  .container {
-    margin: 32px auto 56px;
-    padding: 0 14px;
-  }
-}
-
 header {
   margin-bottom: 36px;
   padding-bottom: 20px;
@@ -292,7 +285,44 @@ strong {
   object-fit: contain;
 }
 
+.footer {
+  margin-top: 52px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.footer-address {
+  text-align: left;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.cv-link {
+  margin-top: 6px;
+  font-size: 0.9rem;
+}
+
 @media (max-width: 600px) {
+  .container {
+    margin: 32px auto 56px;
+    padding: 0 14px;
+  }
+
+  .name {
+    font-size: 1.5rem;
+  }
+
+  .header-with-logo {
+    gap: 10px;
+  }
+
+  .header-logo {
+    height: 55px;
+  }
+
   .about-grid {
     flex-direction: column;
     align-items: center;
@@ -314,26 +344,21 @@ strong {
     justify-content: center;
     gap: 12px;
   }
-}
 
-.footer {
-  margin-top: 52px;
-  padding-top: 16px;
-  border-top: 1px solid #e5e7eb;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  text-align: right;
-}
+  .about-text .section-label,
+  .about-text h2 {
+    text-align: center;
+  }
 
-.footer-address {
-  text-align: left;
-  line-height: 1.5;
-  margin-bottom: 10px;
-}
+  .bio-entry {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-.cv-link {
-  margin-top: 6px;
-  font-size: 0.9rem;
+  .affiliations {
+    justify-content: center;
+  }
 }
 
 .cv-link a {
