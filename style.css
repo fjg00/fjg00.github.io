@@ -325,6 +325,12 @@ strong {
   text-align: right;
 }
 
+.footer-address {
+  text-align: left;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
 .cv-link {
   margin-top: 6px;
   font-size: 0.9rem;
