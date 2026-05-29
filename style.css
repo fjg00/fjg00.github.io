@@ -242,6 +242,7 @@ strong {
   flex-wrap: wrap;
   align-items: center;
   gap: 32px;
+  margin-bottom: 40px;
 }
 
 .affiliations a {
