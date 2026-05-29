@@ -253,8 +253,10 @@ strong {
 }
 
 .affiliations img {
-  height: 45px;
+  height: 40px;
   width: auto;
+  max-width: 150px;
+  object-fit: contain;
 }
 
 @media (max-width: 600px) {
