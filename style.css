@@ -257,9 +257,9 @@ strong {
 }
 
 .affiliations img {
-  height: 50px;
+  height: 60px;
   width: auto;
-  max-width: 180px;
+  max-width: 200px;
   object-fit: contain;
 }
 
