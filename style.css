@@ -2,8 +2,8 @@
   --bg: #ffffff;
   --text-main: #111827;
   --text-muted: #6b7280;
-  --accent: #002A5C;
-  --accent-light: #003D7A;
+  --accent: #1A4F7A;
+  --accent-light: #2568A0;
   --accent-bg: #f0f4f8;
   --max-width: 720px;
 }
@@ -71,7 +71,7 @@ header {
 }
 
 .header-logo {
-  height: 165px;
+  height: 110px;
   width: auto;
   opacity: 0.8;
   flex-shrink: 0;
