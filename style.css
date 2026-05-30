@@ -70,6 +70,12 @@ header {
   flex-shrink: 0;
 }
 
+/* Header photo is only shown on mobile (see media query); the full-size
+   photo lives in the about sidebar on desktop. */
+.header-photo {
+  display: none;
+}
+
 .name {
   font-size: 2.2rem;
   letter-spacing: 0.14em;
@@ -323,19 +329,37 @@ strong {
     height: 55px;
   }
 
+  /* Photo at the top, next to the name on the left. */
+  .header-main {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .header-photo {
+    display: block;
+    width: 66px;
+    height: 66px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
   .about-grid {
     flex-direction: column;
     align-items: center;
     gap: 20px;
   }
 
-  .about-sidebar {
-    width: 140px;
+  /* The full-size sidebar photo is replaced by the header photo on mobile. */
+  .about-sidebar .profile-photo {
+    display: none;
   }
 
-  .profile-photo {
-    width: 140px;
-    height: 140px;
+  .about-sidebar {
+    width: 100%;
   }
 
   .sidebar-links {
@@ -345,7 +369,6 @@ strong {
     gap: 12px;
   }
 
-  .about-text .section-label,
   .about-text h2 {
     text-align: center;
   }
