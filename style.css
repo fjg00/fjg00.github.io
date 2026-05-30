@@ -329,16 +329,26 @@ strong {
     gap: 20px;
   }
 
+  /* Flatten the sidebar so the photo and links can be ordered
+     independently around the About Me text. */
   .about-sidebar {
-    width: 100%;
+    display: contents;
   }
 
   .profile-photo {
-    width: 190px;
-    height: 190px;
+    width: 210px;
+    height: 210px;
+    order: 1;
+  }
+
+  .about-text {
+    order: 2;
+    width: 100%;
   }
 
   .sidebar-links {
+    order: 3;
+    width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
