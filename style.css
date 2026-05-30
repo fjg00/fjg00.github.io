@@ -330,19 +330,19 @@ strong {
   }
 
   .about-sidebar {
-    width: 140px;
+    width: 100%;
   }
 
   .profile-photo {
-    width: 140px;
-    height: 140px;
+    width: 190px;
+    height: 190px;
   }
 
   .sidebar-links {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
+    gap: 10px 18px;
   }
 
   .about-text h2 {
