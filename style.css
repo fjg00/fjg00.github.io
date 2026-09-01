@@ -430,6 +430,15 @@ strong {
 
 .research-item p {
   font-size: 0.93rem;
-  color: var(--text-muted);
+  color: var(--text-main);
   margin-bottom: 0;
+}
+
+.research-item p + p {
+  margin-top: 12px;
+}
+
+.research-item .key {
+  color: var(--accent);
+  font-weight: 600;
 }
