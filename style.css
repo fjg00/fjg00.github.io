@@ -152,6 +152,8 @@ h2 {
 p {
   font-size: 0.96rem;
   margin-bottom: 12px;
+  text-align: justify;
+  hyphens: auto;
 }
 
 p:last-child {
