@@ -13,7 +13,7 @@
   <meta property="og:url" content="https://fjg00.github.io/publications.html" />
   <meta property="og:image" content="https://fjg00.github.io/photo.png" />
   <meta name="twitter:card" content="summary" />
-  <link rel="stylesheet" href="style.css?v=6" />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
   <div class="container">
@@ -31,8 +31,8 @@
         <a href="index.html">Home</a>
         <a href="biography.html">Biography</a>
         <a href="research.html">Research</a>
-        <a href="teaching.html">Teaching</a>
         <a href="publications.html" class="active">Papers</a>
+        <a href="teaching.html">Teaching</a>
       </nav>
       </div>
       <a href="https://www.utoronto.ca" target="_blank" rel="noopener"><img src="logos/uoft.png" alt="University of Toronto" class="header-logo" /></a>
@@ -44,8 +44,14 @@
         <div class="pub-item">
           <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/11680529" target="_blank" rel="noopener">Continuous Time Identification of Linear Systems</a></div>
           <div><strong>F. J. Ghadieh</strong>, M. E. Broucke</div>
-          <div class="pub-venue">IEEE Transactions on Automatic Control (Technical Note), early access, 2026</div>
-          <p class="muted" style="margin-top: 8px; font-size: 0.9rem;">
+          <div class="pub-venue">IEEE Transactions on Automatic Control, early access, 2026</div>
+          <div class="pub-links">
+            <a href="https://ieeexplore.ieee.org/document/11680529" target="_blank" rel="noopener">IEEE Xplore</a>
+            <a href="https://arxiv.org/abs/2606.10963" target="_blank" rel="noopener">extended version (arXiv)</a>
+            <button type="button" class="pub-action" data-abstract aria-expanded="false">Abstract</button>
+            <button type="button" class="pub-action" data-cite>Cite</button>
+          </div>
+          <p class="muted pub-abstract" hidden>
             We develop a framework for model identification adhering to the tenets of neuromorphic computation,
             without resorting to neural networks as the mathematical substrate. In particular, all computations take
             place in continuous time. We are naturally led to adaptive observers, where the main technical obstacle is
@@ -55,27 +61,41 @@
             undermodeled case. A discrete algorithm orchestrates successive experiments to incrementally learn the
             model order, while a standard parameter adaptation law learns the parameters.
           </p>
-          <div class="pub-links">
-            <a href="https://ieeexplore.ieee.org/document/11680529" target="_blank" rel="noopener">IEEE Xplore</a>
-            <a href="https://arxiv.org/abs/2606.10963" target="_blank" rel="noopener">extended version (arXiv)</a>
-          </div>
+          <script type="application/x-bibtex" data-bibname="ghadieh2026continuous">@article{ghadieh2026continuous,
+  author  = {Ghadieh, Fatima and Broucke, Mireille E.},
+  title   = {Continuous Time Identification of Linear Systems},
+  journal = {IEEE Transactions on Automatic Control},
+  year    = {2026},
+  note    = {Early access}
+}</script>
         </div>
         <div class="pub-item">
           <div class="pub-title"><a href="https://doi.org/10.1109/OJCSYS.2023.3277760" target="_blank" rel="noopener">Policy Evaluation in Decentralized POMDPs with Belief Sharing</a></div>
           <div>M. Kayaalp, <strong>F. Ghadieh</strong>, A. H. Sayed</div>
           <div class="pub-venue">IEEE Open Journal of Control Systems, vol. 2, pp. 125–145, 2023</div>
-          <p class="muted" style="margin-top: 8px; font-size: 0.9rem;">
+          <div class="pub-links">
+            <a href="https://doi.org/10.1109/OJCSYS.2023.3277760" target="_blank" rel="noopener">doi</a>
+            <a href="https://arxiv.org/abs/2302.04151" target="_blank" rel="noopener">arxiv</a>
+            <a href="https://github.com/asl-epfl/DecPOMDP_Policy_Evaluation_w-Belief_Sharing" target="_blank" rel="noopener">code</a>
+            <button type="button" class="pub-action" data-abstract aria-expanded="false">Abstract</button>
+            <button type="button" class="pub-action" data-cite>Cite</button>
+          </div>
+          <p class="muted pub-abstract" hidden>
             We consider cooperative policy evaluation where agents cannot observe the environment state directly.
             We propose a fully decentralized belief forming strategy that relies on individual updates and localized
             interactions over a communication network. Agents exchange both beliefs and value function parameter
             estimates, allowing information to diffuse over the network. We analytically show that this yields
             agent parameters with a bounded difference from a centralized baseline.
           </p>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1109/OJCSYS.2023.3277760" target="_blank" rel="noopener">doi</a>
-            <a href="https://arxiv.org/abs/2302.04151" target="_blank" rel="noopener">arxiv</a>
-            <a href="https://github.com/asl-epfl/DecPOMDP_Policy_Evaluation_w-Belief_Sharing" target="_blank" rel="noopener">code</a>
-          </div>
+          <script type="application/x-bibtex" data-bibname="kayaalp2023policy">@article{kayaalp2023policy,
+  author  = {Kayaalp, Mert and Ghadieh, Fatima and Sayed, Ali H.},
+  title   = {Policy Evaluation in Decentralized {POMDPs} with Belief Sharing},
+  journal = {IEEE Open Journal of Control Systems},
+  volume  = {2},
+  pages   = {125--145},
+  year    = {2023},
+  doi     = {10.1109/OJCSYS.2023.3277760}
+}</script>
         </div>
       </section>
     </main>
@@ -89,5 +109,35 @@
       </div>
     </div>
   </div>
+
+  <script>
+    document.querySelectorAll('.pub-item').forEach(function (item) {
+      var absBtn = item.querySelector('[data-abstract]');
+      var abs = item.querySelector('.pub-abstract');
+      if (absBtn && abs) {
+        absBtn.addEventListener('click', function () {
+          abs.hidden = !abs.hidden;
+          absBtn.setAttribute('aria-expanded', String(!abs.hidden));
+        });
+      }
+      var citeBtn = item.querySelector('[data-cite]');
+      var bib = item.querySelector('script[type="application/x-bibtex"]');
+      if (citeBtn && bib) {
+        citeBtn.addEventListener('click', function () {
+          var text = bib.textContent.trim() + '\n';
+          var name = (bib.getAttribute('data-bibname') || 'citation') + '.bib';
+          var blob = new Blob([text], { type: 'application/x-bibtex' });
+          var url = URL.createObjectURL(blob);
+          var a = document.createElement('a');
+          a.href = url;
+          a.download = name;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
